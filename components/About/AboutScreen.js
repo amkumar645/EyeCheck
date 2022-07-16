@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
 import { colors } from '../utils/colors';
-import { Ionicons } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons';
 
 const AboutScreen = ({ navigation }) => {
     return (
@@ -8,26 +8,26 @@ const AboutScreen = ({ navigation }) => {
         <View>
           <Text style={styles.title}>ABOUT</Text>
           <Text style={styles.subtitle}>
-            Originated by Soryan Kumar,
+            Originated by Soryan Kumar,{"\n"}
             Alpert Medical School Class of 2025
           </Text>
           <Text style={styles.subtitle}>
-            Developed by Arnav Kumar,
+            Developed by Arnav Kumar,{"\n"}
             Princeton University Class of 2024
           </Text>
           <Text style={styles.subtitle}>
-            Designed by Anagha Lokhande,
+            Designed by Anagha Lokhande,{"\n"}
             Alpert Medical School Class of 2025
           </Text>
           <Text style={styles.subtitle}>
-            Clinical Advisory
+            Clinical Advisory {"\n"}
             from Jamie Schaefer, MD
           </Text>
         </View>
         <View>
           <Text style={styles.description}>
             EyeCheck was originally designed to assist
-            new Ophthalmology Clinic volunteers at 
+            new Ophthalmology Clinic volunteers at
             Clínica Esperanza/Hope Clinic in Providence,
             Rhode Island
           </Text>
@@ -39,15 +39,11 @@ const AboutScreen = ({ navigation }) => {
           </Text>
           <Text style={styles.description}>
             It is not intended to take the place of
-            a certified Spanish translator and is only 
-            attended for use under the supervision of 
-            a board-certified ophthalmologist. It is 
+            a certified Spanish translator and is only
+            attended for use under the supervision of
+            a board-certified ophthalmologist. It is
             not intended for patient use nor to diagnose,
             treat, or cure any disease.
-          </Text>
-          <Text style={styles.description}>
-            Clinical Advisory
-            from Jamie Schaefer, MD
           </Text>
         </View>
         <View>
@@ -106,7 +102,7 @@ const styles = StyleSheet.create({
         color: colors.darkerblue,
         textAlign: 'center',
         marginBottom: 20,
-    }, 
+    },
     title: {
         fontSize: Platform.OS === "android" ? 60: 70,
         marginBottom: 30,
