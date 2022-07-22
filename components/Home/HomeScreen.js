@@ -13,7 +13,7 @@ const HomeScreen = ({ navigation }) => {
           style={styles.logo}
           source={logo}
         />
-        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('History')}>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('HISTORY')}>
           <Text style={styles.section}>
             <FontAwesome5 style={styles.icon} name={'book-open'}/>
             <Text>{" "}</Text>
@@ -42,7 +42,7 @@ const HomeScreen = ({ navigation }) => {
           </Text>
         </View>
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate('About')}>
+          <TouchableOpacity onPress={() => navigation.navigate('ABOUT')}>
             <Text style={styles.footer}>ABOUT</Text>
           </TouchableOpacity>
         </View>

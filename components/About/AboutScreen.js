@@ -51,7 +51,7 @@ const AboutScreen = ({ navigation }) => {
           </Text>
         </View>
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <TouchableOpacity onPress={() => navigation.navigate('HOME')}>
             <Text style={styles.footer}>
                 <Ionicons name="chevron-back" size={18} color={colors.darkblue}/>
                 Home
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     description: {
-      fontSize: Platform.OS === "android" ? 18: 18,
+      fontSize: Platform.OS === "android" ? 15: 18,
       fontFamily: 'OpenSans',
       marginBottom: 10,
       color: colors.darkerblue,
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     section: {
-        fontSize: Platform.OS === "android" ? 30: 30,
+        fontSize: Platform.OS === "android" ? 25: 30,
         color: colors.darkblue,
         fontFamily: 'OpenSansBold',
         textAlign: 'center',

@@ -53,6 +53,8 @@ const styles = StyleSheet.create({
       marginBottom: 30,
       color: 'black',
       textAlign: 'center',
+      marginRight: 30,
+      marginLeft: 30
     },
     footer: {
         fontSize: Platform.OS === "android" ? 20: 25,

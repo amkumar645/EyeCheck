@@ -1,9 +1,8 @@
 
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MainStackNavigator} from "./StackNavigator";
 import { colors } from '../utils/colors';
-import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { Entypo, FontAwesome5, Ionicons } from '@expo/vector-icons';
 import HomeScreen from "../Home/HomeScreen";
 import HistoryScreen from "../History/HistoryScreen";
@@ -13,61 +12,161 @@ const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} 
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarStyle: {
+          position: 'absolute',
+          paddingBottom: Platform.OS === "android" ? 20: 30,
+          backgroundColor: colors.bgwhite,
+          borderTopColor: "black",
+          borderTopWidth: 1,
+          height: Platform.OS === "android" ? 80: 100,
+        },
+        tabBarButton: ['ABOUT'].includes(route.name)
+        ? () => {
+            return null;
+          }
+        : undefined,
+      })}
+    >
+      <Tab.Screen name="HOME" component={HomeScreen} 
         options={{
             headerShown: false,
             tabBarStyle: { display: "none" },
-            tabBarIcon: () => (
-                <Ionicons name="home-sharp" style={styles.icon}/>
-            )
+            tabBarIcon: ({ focused }) => {
+                if (!focused) {
+                  return <Ionicons name="home-sharp" style={styles.icon}/>
+                }
+                else {
+                  return <Ionicons name="home-sharp" style={styles.focusedIcon}/>
+                }
+            },
+            tabBarLabel: ({ focused }) => {
+              if (!focused) {
+                return <Text style={styles.label}>HOME</Text>
+              }
+              else {
+                return <Text style={styles.labelFocused}>HOME</Text>
+              }
+            }
         }}
       />
       {/* Must get rid of this since it shouldn't be a tab
           Look into nested navigation?
        */}
-      <Tab.Screen name="About" component={AboutScreen} 
+      <Tab.Screen name="ABOUT" component={AboutScreen} 
         options={{
             headerShown: false,
             tabBarStyle: { display: "none" },
-            tabBarIcon: () => (
-                <Ionicons name="home-sharp" style={styles.icon}/>
-            )
+            tabBarIcon: () => {
+              return <></>
+            },
+            tabBarLabel: () => {
+              return <></>
+            },
         }}
       />
-      <Tab.Screen name="History" component={HistoryScreen}
+      <Tab.Screen name="HISTORY" component={HistoryScreen}
         options={{
             headerShown: false,
-            tabBarIcon: () => (
-                <FontAwesome5 style={styles.icon} name={'book-open'}/>
-            )
+            tabBarIcon: ({focused}) => {
+              if (!focused)
+                return <FontAwesome5 style={styles.icon} name={'book-open'}/>
+              else 
+                return <FontAwesome5 style={styles.focusedIcon} name={'book-open'}/>
+            },
+            tabBarLabel: ({ focused }) => {
+              if (!focused) {
+                return <Text style={styles.label}>HISTORY</Text>
+              }
+              else {
+                return <Text style={styles.labelFocused}>HISTORY</Text>
+              }
+            }
         }}/>
-      {/* <Tab.Screen name="Exam" component={MainStackNavigator}
-        options={{headerShown: false}}/>
-      <Tab.Screen name="Pharmacy" component={MainStackNavigator}
-        options={{headerShown: false}}/>
-      <Tab.Screen name="Glossary" component={MainStackNavigator}
-        options={{headerShown: false}}/> */}
+      <Tab.Screen name="EXAM" component={HomeScreen}
+       options={{
+          headerShown: false,
+          tabBarStyle: { display: "none" },
+          tabBarIcon: () => (
+            <Entypo style={styles.icon} name={'magnifying-glass'}/>
+          ),
+          tabBarLabel: ({ focused }) => {
+            if (!focused) {
+              return <Text style={styles.label}>EXAM</Text>
+            }
+            else {
+              return <Text style={styles.labelFocused}>EXAM</Text>
+            }
+          }
+      }}
+      />
+      <Tab.Screen name="PHARMACY" component={HomeScreen}
+        options={{
+          headerShown: false,
+          tabBarStyle: { display: "none" },
+          tabBarIcon: ({focused}) => {
+            if (!focused)
+              return <FontAwesome5 style={styles.icon} name={'eye-dropper'}/>
+            else
+              return <FontAwesome5 style={styles.focusedIcon} name={'eye-dropper'}/>
+          },
+          tabBarLabel: ({ focused }) => {
+            if (!focused) {
+              return <Text style={styles.label}>PHARMACY</Text>
+            }
+            else {
+              return <Text style={styles.labelFocused}>PHARMACY</Text>
+            }
+          }
+      }} />
+      <Tab.Screen name="GLOSSARY" component={HomeScreen}
+        options={{
+          headerShown: false,
+          tabBarStyle: { display: "none" },
+          tabBarIcon: ({ focused }) => {
+            if (!focused)
+              return <FontAwesome5 style={styles.icon} name={'question'}/>
+            else
+              return <FontAwesome5 style={styles.focusedIcon} name={'question'}/>
+          },
+          tabBarLabel: ({ focused }) => {
+            if (!focused) {
+              return <Text style={styles.label}>GLOSSARY</Text>
+            }
+            else {
+              return <Text style={styles.labelFocused}>GLOSSARY</Text>
+            }
+          }
+      }} />
     </Tab.Navigator>
   );
 };
-
-
-// Home Screen Navigation
-function Home() {
-  return (
-    <MainStackNavigator/>
-  );
-}
 
 const styles = StyleSheet.create({
     view: {
       alignItems: 'center',
       justifyContent: 'center'
     },
+    focusedIcon: {
+      fontSize: Platform.OS === "android" ? 35: 40,
+      color: colors.darkerblue,
+    }, 
     icon: {
-        fontSize: Platform.OS === "android" ? 20: 20,
-        color: colors.darkerblue
+      fontSize: Platform.OS === "android" ? 35: 40,
+      color: colors.darkblue,
+    },
+    label: {
+      color: colors.darkblue,
+      fontFamily: 'Copperplate',
+      fontSize: Platform.OS === "android" ? 10: 12,
+      marginTop: Platform.OS === "android" ? 0: 0,
+    },
+    labelFocused: {
+      color: colors.darkerblue,
+      fontFamily: 'Copperplate',
+      fontSize: Platform.OS === "android" ? 10: 12,
+      marginTop: Platform.OS === "android" ? 0: 0,
     }
 });
 
