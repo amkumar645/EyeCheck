@@ -7,6 +7,9 @@ import { Entypo, FontAwesome5, Ionicons } from '@expo/vector-icons';
 import HomeScreen from "../Home/HomeScreen";
 import HistoryScreen from "../History/HistoryScreen";
 import AboutScreen from "../About/AboutScreen";
+import ExamScreen from "../Exam/ExamScreen";
+import GlossaryScreen from "../Glossary/GlossaryScreen";
+import PharmacyScreen from "../Pharmacy/PharmacyScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -84,13 +87,16 @@ const BottomTabNavigator = () => {
               }
             }
         }}/>
-      <Tab.Screen name="EXAM" component={HomeScreen}
+      <Tab.Screen name="EXAM" component={ExamScreen}
        options={{
           headerShown: false,
-          tabBarStyle: { display: "none" },
-          tabBarIcon: () => (
-            <Entypo style={styles.icon} name={'magnifying-glass'}/>
-          ),
+          tabBarIcon: ({focused}) => {
+            if (!focused)
+              return <Entypo style={styles.icon} name={'magnifying-glass'}/>
+            else
+              return <Entypo style={styles.focusedIcon} name={'magnifying-glass'}/>
+
+          },
           tabBarLabel: ({ focused }) => {
             if (!focused) {
               return <Text style={styles.label}>EXAM</Text>
@@ -101,10 +107,9 @@ const BottomTabNavigator = () => {
           }
       }}
       />
-      <Tab.Screen name="PHARMACY" component={HomeScreen}
+      <Tab.Screen name="PHARMACY" component={PharmacyScreen}
         options={{
           headerShown: false,
-          tabBarStyle: { display: "none" },
           tabBarIcon: ({focused}) => {
             if (!focused)
               return <FontAwesome5 style={styles.icon} name={'eye-dropper'}/>
@@ -120,10 +125,9 @@ const BottomTabNavigator = () => {
             }
           }
       }} />
-      <Tab.Screen name="GLOSSARY" component={HomeScreen}
+      <Tab.Screen name="GLOSSARY" component={GlossaryScreen}
         options={{
           headerShown: false,
-          tabBarStyle: { display: "none" },
           tabBarIcon: ({ focused }) => {
             if (!focused)
               return <FontAwesome5 style={styles.icon} name={'question'}/>

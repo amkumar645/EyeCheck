@@ -20,27 +20,27 @@ const HomeScreen = ({ navigation }) => {
             History
           </Text>
         </TouchableOpacity>
-        <View style={styles.sectionBox}>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('EXAM')}>
           <Text style={styles.section}>
             <Entypo style={styles.icon} name={'magnifying-glass'}/>
             <Text>{" "}</Text>
             Exam
           </Text>
-        </View>
-        <View style={styles.sectionBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('PHARMACY')}>
           <Text style={styles.section}>
             <FontAwesome5 style={styles.icon} name={'eye-dropper'}/>
             <Text>{" "}</Text>
             Pharmacy
           </Text>
-        </View>
-        <View style={styles.sectionBox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('GLOSSARY')}>
           <Text style={styles.section}>
             <FontAwesome5 style={styles.icon} name={'question'}/>
             <Text>{"  "}</Text>
             Glossary
           </Text>
-        </View>
+        </TouchableOpacity>
         <View>
           <TouchableOpacity onPress={() => navigation.navigate('ABOUT')}>
             <Text style={styles.footer}>ABOUT</Text>

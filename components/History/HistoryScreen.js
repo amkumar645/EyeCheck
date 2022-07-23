@@ -5,7 +5,7 @@ const HistoryScreen = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View>
-          <Text style={styles.title}>History</Text>
+          <Text style={styles.title}>HISTORY</Text>
           <Text style={styles.description}>
             We suggest you go in order and follow the click-through prompts.
           </Text>
@@ -43,9 +43,10 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.bgwhite,
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         marginLeft: 10,
-        marginRight: 10
+        marginRight: 10,
+        marginTop: Platform.OS === "android" ? 60: 100,
     },
     description: {
       fontSize: Platform.OS === "android" ? 17: 17,
