@@ -47,7 +47,7 @@ const AboutScreen = ({ navigation }) => {
           </Text>
         </View>
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <TouchableOpacity onPress={() => navigation.navigate('HOME')}>
             <Text style={styles.footer}>
                 <Ionicons name="chevron-back" size={18} color={colors.darkblue}/>
                 Home
