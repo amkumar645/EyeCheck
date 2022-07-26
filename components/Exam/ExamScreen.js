@@ -1,9 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 
 const ExamScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           <View>
             <Text style={styles.title}>EXAM</Text>
             <Text style={styles.description}>
@@ -40,10 +41,11 @@ const ExamScreen = ({ navigation }) => {
               Administer eye drops
             </Text>
           </TouchableOpacity>
+          </ScrollView>
         </SafeAreaView>
       );
   }
-  
+
   const styles = StyleSheet.create({
       container: {
           flex: 1,
@@ -53,6 +55,12 @@ const ExamScreen = ({ navigation }) => {
           marginLeft: 10,
           marginRight: 10,
           marginBottom: Platform.OS === "android" ? 60: 100,
+      },
+      scrollView: {
+          flex: 1,
+          backgroundColor: colors.bgwhite,
+          marginLeft: 10,
+          marginRight: 10,
       },
       description: {
         fontSize: Platform.OS === "android" ? 17: 17,
@@ -81,7 +89,7 @@ const ExamScreen = ({ navigation }) => {
           minHeight: 58,
           justifyContent: 'center',
           marginBottom: 20,
-  
+
       },
       title: {
           fontSize: Platform.OS === "android" ? 50: 70,

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image, ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 import Proparacaine from '../../assets/images/dropper_1.png';
 import Tropicamide from '../../assets/images/dropper_2.png';
@@ -9,10 +9,11 @@ import Timolol from '../../assets/images/dropper_4.png';
 const PharmacyScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           <View>
             <Text style={styles.title}>PHARMACY</Text>
             <Text style={styles.description}>
-              Quick info on the most common meds you'll need for your exam and the ones 
+              Quick info on the most common meds you'll need for your exam and the ones
               your patient may be using. Tap each icon for more.
             </Text>
           </View>
@@ -73,17 +74,18 @@ const PharmacyScreen = ({ navigation }) => {
                 </Text>
               </TouchableOpacity>
             </View>
-          </View>
           <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.goBack()}>
             <Text style={styles.sectionBottom}>
               Came here from Past Medical History?
               Tap to go back
             </Text>
           </TouchableOpacity>
+          </View>
+          </ScrollView>
         </SafeAreaView>
       );
   }
-  
+
   const styles = StyleSheet.create({
       container: {
           flex: 1,
@@ -91,12 +93,19 @@ const PharmacyScreen = ({ navigation }) => {
           alignItems: 'center',
           marginTop: Platform.OS === "android" ? 60: 80,
       },
+      scrollView: {
+          flex: 1,
+          backgroundColor: colors.bgwhite,
+          marginLeft: 10,
+          marginRight: 10,
+      },
       dropperContainer: {
-        flex: 1, 
-        flexDirection: 'row', 
+        flex: 1,
+        flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
+        alignContent: 'center',
       },
       description: {
         fontSize: Platform.OS === "android" ? 17: 17,
@@ -119,7 +128,8 @@ const PharmacyScreen = ({ navigation }) => {
           marginVertical: 6
       },
       item: {
-        width: '50%',
+        textAlign: 'center',
+        width: '50%'
       },
       section: {
           fontSize: Platform.OS === "android" ? 17: 17,
@@ -145,7 +155,7 @@ const PharmacyScreen = ({ navigation }) => {
         width: 170,
         minHeight: 170,
         marginBottom: 20,
-        marginHorizontal: Platform.OS === "android" ? 12: 20,
+        //marginHorizontal: Platform.OS === "android" ? 12: 20,
         alignItems: 'center',
       },
       sectionBoxBottom: {
@@ -155,7 +165,7 @@ const PharmacyScreen = ({ navigation }) => {
         borderRadius: 5,
         width: 323,
         minHeight: 58,
-        marginBottom: Platform.OS === "android" ? 100: 120
+        //marginBottom: Platform.OS === "android" ? 100: 120
       },
       sectionSubtitle: {
         fontSize: Platform.OS === "android" ? 17: 17,
