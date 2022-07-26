@@ -32,7 +32,7 @@ const BottomTabNavigator = () => {
         : undefined,
       })}
     >
-      <Tab.Screen name="HOME" component={HomeScreen} 
+      <Tab.Screen name="HOME" component={HomeScreen}
         options={{
             headerShown: false,
             tabBarStyle: { display: "none" },
@@ -57,7 +57,7 @@ const BottomTabNavigator = () => {
       {/* Must get rid of this since it shouldn't be a tab
           Look into nested navigation?
        */}
-      <Tab.Screen name="ABOUT" component={AboutScreen} 
+      <Tab.Screen name="ABOUT" component={AboutScreen}
         options={{
             headerShown: false,
             tabBarStyle: { display: "none" },
@@ -75,7 +75,7 @@ const BottomTabNavigator = () => {
             tabBarIcon: ({focused}) => {
               if (!focused)
                 return <FontAwesome5 style={styles.icon} name={'book-open'}/>
-              else 
+              else
                 return <FontAwesome5 style={styles.focusedIcon} name={'book-open'}/>
             },
             tabBarLabel: ({ focused }) => {
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     focusedIcon: {
       fontSize: Platform.OS === "android" ? 35: 40,
       color: colors.darkerblue,
-    }, 
+    },
     icon: {
       fontSize: Platform.OS === "android" ? 35: 40,
       color: colors.darkblue,

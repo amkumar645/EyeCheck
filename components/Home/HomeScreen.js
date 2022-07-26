@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
       backgroundColor: colors.bgwhite,
       alignItems: 'center',
       justifyContent: 'center',
-  
+
     },
     footer: {
       fontSize: Platform.OS === "android" ? 20: 25,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
       fontFamily: 'Copperplate',
     },
     sectionBox: {
-      borderWidth: 2,
+      borderWidth: 1,
       borderColor: colors.darkblue,
       backgroundColor: colors.lightblue,
       borderRadius: 5,
@@ -95,6 +95,5 @@ const styles = StyleSheet.create({
       fontFamily: 'Copperplate',
     },
 });
-  
+
 export default HomeScreen;
-  

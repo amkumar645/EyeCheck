@@ -22,7 +22,7 @@ const GlossaryScreen = ({ navigation }) => {
         </SafeAreaView>
       );
   }
-  
+
   const styles = StyleSheet.create({
       container: {
           flex: 1,
@@ -56,7 +56,7 @@ const GlossaryScreen = ({ navigation }) => {
           marginRight: 2
       },
       sectionBox: {
-          borderWidth: 2,
+          borderWidth: 1,
           borderColor: colors.darkblue,
           backgroundColor: colors.lightblue,
           borderRadius: 5,
@@ -64,7 +64,7 @@ const GlossaryScreen = ({ navigation }) => {
           minHeight: 190,
           justifyContent: 'center',
           marginBottom: 20,
-  
+
       },
       title: {
           fontSize: Platform.OS === "android" ? 60: 70,

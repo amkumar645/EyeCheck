@@ -1,9 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image, ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
-import Proparacaine from '../../assets/images/dropper_1.png';
-import Tropicamide from '../../assets/images/dropper_2.png';
-import Prednisolone from '../../assets/images/dropper_3.png';
-import Timolol from '../../assets/images/dropper_4.png';
+import Proparacaine from '../../assets/images/numb_drops-modified.png';
+import Tropicamide from '../../assets/images/dilating_drops.png';
+import Prednisolone from '../../assets/images/steroid_drops.png';
+import Timolol from '../../assets/images/glaucoma_drops.png';
 
 
 const PharmacyScreen = ({ navigation }) => {
@@ -74,7 +74,7 @@ const PharmacyScreen = ({ navigation }) => {
                 </Text>
               </TouchableOpacity>
             </View>
-          <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.goBack()}>
+          <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.navigate('PMH')}>
             <Text style={styles.sectionBottom}>
               Came here from Past Medical History?
               Tap to go back
@@ -92,6 +92,7 @@ const PharmacyScreen = ({ navigation }) => {
           backgroundColor: colors.bgwhite,
           alignItems: 'center',
           marginTop: Platform.OS === "android" ? 60: 80,
+          marginBottom: 120,
       },
       scrollView: {
           flex: 1,
@@ -148,7 +149,7 @@ const PharmacyScreen = ({ navigation }) => {
         marginVertical: 5
       },
       sectionBox: {
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: colors.darkblue,
         backgroundColor: colors.lightblue,
         borderRadius: 5,
@@ -159,7 +160,7 @@ const PharmacyScreen = ({ navigation }) => {
         alignItems: 'center',
       },
       sectionBoxBottom: {
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: colors.darkblue,
         backgroundColor: colors.lightblue,
         borderRadius: 5,
