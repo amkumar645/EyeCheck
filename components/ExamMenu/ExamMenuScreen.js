@@ -18,17 +18,17 @@ const ExamMenuScreen = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
             <Text style={styles.section}>
-              Test pupils
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
-            <Text style={styles.section}>
               Test visual fields
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
             <Text style={styles.section}>
               Test extraocular movements
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+            <Text style={styles.section}>
+              Test pupils
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
