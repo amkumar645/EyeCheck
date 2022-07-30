@@ -4,13 +4,15 @@ import { colors } from '../utils/colors';
 const ExamMenuScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
-        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-          <View>
+           <View>
             <Text style={styles.title}>EXAM</Text>
             <Text style={styles.description}>
               Find a workflow that works for you!
             </Text>
           </View>
+        <ScrollView 
+        contentContainerStyle={{flexGrow : 1, alignItems : 'center'}}
+        style={styles.scrollView} showsVerticalScrollIndicator={false}>
           <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("InspectEyes")}>
             <Text style={styles.section}>
               Inspect eyelids and eyeballs
@@ -51,17 +53,9 @@ const ExamMenuScreen = ({ navigation }) => {
           flex: 1,
           backgroundColor: colors.bgwhite,
           alignItems: 'center',
-          justifyContent: 'center',
-          marginLeft: 10,
-          marginRight: 10,
-          marginTop: Platform.OS === "android" ? 60: 100,
-          marginBottom: 120,
       },
       scrollView: {
-          flex: 1,
-          backgroundColor: colors.bgwhite,
-          marginLeft: 10,
-          marginRight: 10,
+          marginBottom: 120,
       },
       description: {
         fontSize: Platform.OS === "android" ? 17: 17,
@@ -94,7 +88,8 @@ const ExamMenuScreen = ({ navigation }) => {
       },
       title: {
           fontSize: Platform.OS === "android" ? 50: 70,
-          marginBottom: 10,
+          marginTop: Platform.OS === "android" ? 60: 30,
+          marginBottom: 20,
           color: colors.darkerblue,
           fontFamily: 'Copperplate',
           textAlign: 'center'

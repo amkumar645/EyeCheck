@@ -1,11 +1,11 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HistoryMenuScreen from "../HistoryMenu/HistoryMenuScreen";
-import CCScreen from "../CC/CCScreen";
-import HPIScreen from "../HPI/HPIScreen";
-import PMHScreen from "../PMH/PMHScreen";
-import FHScreen from "../FH/FHScreen";
+import HistoryMenuScreen from "../History Screens/HistoryMenuScreen";
+import CCScreen from "../History Screens/CCScreen";
+import HPIScreen from "../History Screens/HPIScreen";
+import PMHScreen from "../History Screens/PMHScreen";
+import FHScreen from "../History Screens/FHScreen";
 
 const Stack = createNativeStackNavigator();
 

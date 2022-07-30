@@ -9,7 +9,7 @@ import Timolol from '../../assets/images/glaucoma_drops.png';
 const PharmacyScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
-        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
           <View>
             <Text style={styles.title}>PHARMACY</Text>
             <Text style={styles.description}>
@@ -74,13 +74,14 @@ const PharmacyScreen = ({ navigation }) => {
                 </Text>
               </TouchableOpacity>
             </View>
+          
+          </View>
           <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.navigate('PMH')}>
             <Text style={styles.sectionBottom}>
               Came here from Past Medical History?
               Tap to go back
             </Text>
           </TouchableOpacity>
-          </View>
           </ScrollView>
         </SafeAreaView>
       );
@@ -91,22 +92,17 @@ const PharmacyScreen = ({ navigation }) => {
           flex: 1,
           backgroundColor: colors.bgwhite,
           alignItems: 'center',
-          marginTop: Platform.OS === "android" ? 60: 80,
-          marginBottom: 120,
       },
       scrollView: {
-          flex: 1,
           backgroundColor: colors.bgwhite,
           marginLeft: 10,
           marginRight: 10,
+          marginTop: Platform.OS === "android" ? 60: 60,
+          marginBottom: 120,
       },
       dropperContainer: {
-        flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center',
       },
       description: {
         fontSize: Platform.OS === "android" ? 17: 17,
@@ -129,8 +125,9 @@ const PharmacyScreen = ({ navigation }) => {
           marginVertical: 6
       },
       item: {
-        textAlign: 'center',
-        width: '50%'
+        width: '50%',
+        flexGrow: 1,
+        alignItems: 'center'
       },
       section: {
           fontSize: Platform.OS === "android" ? 17: 17,

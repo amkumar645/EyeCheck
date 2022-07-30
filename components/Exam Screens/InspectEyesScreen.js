@@ -1,10 +1,24 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
+import { Ionicons } from '@expo/vector-icons';
 
 const InspectEyesScreen = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <View style={styles.links}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('ExamMenu')}>
+            <View style={styles.linkLeft}>
+              <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
+              <Text style={styles.textLeft}>Exam Main</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('ExamMenu')}>
+            <View style={styles.linkRight}>
+              <Text style={styles.textRight}>Test Visual Fields</Text>
+              <Ionicons style={styles.iconRight} name="chevron-forward" size={30} color={colors.darkblue}/>
+            </View>
+          </TouchableOpacity>
+        </View>
         <View>
           <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
@@ -12,6 +26,7 @@ const InspectEyesScreen = ({ navigation }) => {
             & EYEBALLS
           </Text>
         </View>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
@@ -57,10 +72,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.bgwhite,
         alignItems: 'center',
-        // justifyContent: 'center',
         marginLeft: 10,
         marginRight: 10,
-        marginTop: Platform.OS === "android" ? 60: 100,
         marginBottom: 120
     },
     description: {
@@ -90,6 +103,31 @@ const styles = StyleSheet.create({
     },
     icon: {
         fontSize: Platform.OS === "android" ? 30: 40,
+    },
+    iconLeft: {
+      width: '15%'
+    },
+    iconRight: {
+      width: '15%'
+    },
+    links: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'flex-start',
+      marginTop: Platform.OS === "android" ? 40: 20,
+    },
+    linkLeft: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+    },
+    linkRight: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+    },
+    linkBox: {
+      width: '50%',
     },
     logo: {
         height: 172,
@@ -156,10 +194,24 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
-
+    },
+    textLeft: {
+      fontSize: Platform.OS === "android" ? 16: 18,
+      color: colors.darkblue,
+      fontFamily: 'Copperplate',
+      textAlign: 'left',
+      width: '85%'
+    },
+    textRight: {
+      fontSize: Platform.OS === "android" ? 16: 18,
+      color: colors.darkblue,
+      fontFamily: 'Copperplate',
+      textAlign: 'right',
+      width: '85%'
     },
     title: {
         fontSize: Platform.OS === "android" ? 60: 70,
+        marginTop: Platform.OS === "android" ? 30: 30,
         marginBottom: 20,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',

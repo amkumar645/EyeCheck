@@ -5,11 +5,11 @@ import { colors } from '../utils/colors';
 import { StyleSheet, Text } from 'react-native';
 import { Entypo, FontAwesome5, Ionicons } from '@expo/vector-icons';
 import HomeScreen from "../Home/HomeScreen";
-import HistoryScreen from "../History/HistoryScreen";
+import HistoryScreen from "./HistoryScreen";
 import AboutScreen from "../About/AboutScreen";
-import ExamScreen from "../Exam/ExamScreen";
-import GlossaryScreen from "../Glossary/GlossaryScreen";
-import PharmacyScreen from "../Pharmacy/PharmacyScreen";
+import ExamScreen from "./ExamScreen";
+import GlossaryScreen from "./GlossaryScreen";
+import PharmacyScreen from "../Pharmacy Screens/PharmacyScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -54,9 +54,6 @@ const BottomTabNavigator = () => {
             }
         }}
       />
-      {/* Must get rid of this since it shouldn't be a tab
-          Look into nested navigation?
-       */}
       <Tab.Screen name="ABOUT" component={AboutScreen}
         options={{
             headerShown: false,

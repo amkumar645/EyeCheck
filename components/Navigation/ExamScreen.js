@@ -1,8 +1,8 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ExamMenuScreen from "../ExamMenu/ExamMenuScreen";
-import InspectEyesScreen from "../InspectEyes/InspectEyesScreen";
+import ExamMenuScreen from "../Exam Screens/ExamMenuScreen";
+import InspectEyesScreen from "../Exam Screens/InspectEyesScreen";
 
 const Stack = createNativeStackNavigator();
 

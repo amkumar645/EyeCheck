@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         marginLeft: 10,
         marginRight: 10,
-        marginTop: Platform.OS === "android" ? 60: 100,
         marginBottom: 120
     },
     description: {
@@ -98,6 +97,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: Platform.OS === "android" ? 60: 70,
+        marginTop: Platform.OS === "android" ? 60: 30,
         marginBottom: 30,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
