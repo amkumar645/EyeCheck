@@ -1,20 +1,22 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
+import Proparacaine from '../../assets/images/dropper_1.png';
+import Tropicamide from '../../assets/images/dropper_2.png';
 
-const InspectEyesScreen = ({ navigation }) => {
+const AdministerDrops = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('ExamMenu')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TestVA')}>
             <View style={styles.linkLeft}>
               <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
-              <Text style={styles.textLeft}>Exam Main</Text>
+              <Text style={styles.textLeft}>Test Visual Acuity</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TVFields')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('HOME')}>
             <View style={styles.linkRight}>
-              <Text style={styles.textRight}>Test Visual Fields</Text>
+              <Text style={styles.textRight}>Home</Text>
               <Ionicons style={styles.iconRight} name="chevron-forward" size={30} color={colors.darkblue}/>
             </View>
           </TouchableOpacity>
@@ -22,44 +24,81 @@ const InspectEyesScreen = ({ navigation }) => {
         <View>
           <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
-            Inspect Eyelids {"\n"}
-            & Eyeballs
+            Administer Eye Drops
           </Text>
         </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Tell the patient you'll be inspecting their eyes and ask for permission
-            to touch their eyelids
+            numbing
           </Text>
-        </View>
-        <View style={styles.textSectionBox}>
+          <Image source={Proparacaine} style={styles.image}/>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Voy a examinar sus ojos. {"\n"}
-            ¿Puedo bajar sus párpados?
+            Proparacaine
           </Text>
           <Text style={styles.subTextSection}>
-            <Text>{" "}</Text>
-            I'm going to be examining your eyes. {"\n"}
-            May I touch your eyelids?
+            Use these to numb eyes before administering
+            dilating drops. Can also be used in fluoroscein 
+            tests.
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Examine from the outside in: {"\n"}
-            start with the eyelids and eyelashes, then the sclera, then then
-            cornea/iris/pupils
+            Uncap your drops and sanitize your hands
+          </Text>
+          <Text style={styles.subTextSection}>
+            before touching the patient
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            As you progress in your training, {"\n"}
-            you'll learn to identify findings characteristic of different
-            disease — for now, just note anything unusual you see
+            Tell the patient you'll be putting
+            drops in their eyes
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Voy a poner gotas en sus ojos
+          </Text>
+          <Text style={styles.subTextSection}>
+            I'm going to be putting drops in your eyes
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Gently pull the lower eyelid out
+          </Text>
+          <Text style={styles.subTextSection}>
+            creating a pocket between the eyeball and
+            lower eyelid
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Put 1 drop in between the eyeball and 
+            lower eyelid
+          </Text>
+          <Text style={styles.subTextSection}>
+            without touching the patient
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            dilating
+          </Text>
+          <Image source={Tropicamide} style={styles.image}/>
+          <Text style={styles.textSection}>
+            Tropicamide
+          </Text>
+          <Text style={styles.subTextSection}>
+            These take 30 minutes to work
+            - plan accordingly.
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Repeat the above steps for
+            the Tropicamide drops
           </Text>
         </View>
         </ScrollView>
@@ -110,6 +149,11 @@ const styles = StyleSheet.create({
     iconRight: {
       width: '15%'
     },
+    image: {
+        height: 186,
+        width: 75,
+        marginBottom: 12
+    },
     links: {
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -141,12 +185,11 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     section: {
-        fontSize: 20,
+        fontSize: 18,
         color: colors.darkblue,
         fontFamily: 'OpenSansBold',
         textAlign: 'center',
-        marginLeft: 2,
-        marginRight: 2
+        marginHorizontal: 10,
     },
     sectionBox: {
         borderWidth: 1,
@@ -157,11 +200,10 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
-
     },
     subTextSection: {
         fontSize: 18,
-        color: 'gray',
+        color: colors.grey,
         fontFamily: 'OpenSans',
         textAlign: 'center',
         marginLeft: 4,
@@ -194,6 +236,7 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
+        alignItems: 'center'
     },
     textLeft: {
       fontSize: Platform.OS === "android" ? 16: 18,
@@ -219,4 +262,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default InspectEyesScreen;
+export default AdministerDrops;

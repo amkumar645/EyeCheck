@@ -1,20 +1,21 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
+import H_Test from '../../assets/images/h_test.png';
 
-const InspectEyesScreen = ({ navigation }) => {
+const TestMovements = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('ExamMenu')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TVFields')}>
             <View style={styles.linkLeft}>
               <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
-              <Text style={styles.textLeft}>Exam Main</Text>
+              <Text style={styles.textLeft}>Test Visual Fields</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TVFields')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TestPupils')}>
             <View style={styles.linkRight}>
-              <Text style={styles.textRight}>Test Visual Fields</Text>
+              <Text style={styles.textRight}>Test Pupils</Text>
               <Ionicons style={styles.iconRight} name="chevron-forward" size={30} color={colors.darkblue}/>
             </View>
           </TouchableOpacity>
@@ -22,45 +23,36 @@ const InspectEyesScreen = ({ navigation }) => {
         <View>
           <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
-            Inspect Eyelids {"\n"}
-            & Eyeballs
+            Test Extraocular {"\n"}
+            Movements
           </Text>
         </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Tell the patient you'll be inspecting their eyes and ask for permission
-            to touch their eyelids
+            Ask patient to follow your finger with their 
+            eyes without moving their head
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Voy a examinar sus ojos. {"\n"}
-            ¿Puedo bajar sus párpados?
+            ¿Puede seguir mi dedo con tus ojos sin mover
+            la cabeza?
           </Text>
           <Text style={styles.subTextSection}>
-            <Text>{" "}</Text>
-            I'm going to be examining your eyes. {"\n"}
-            May I touch your eyelids?
+            Can you please follow my finger with 
+            your eyes without moving your head?
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Examine from the outside in: {"\n"}
-            start with the eyelids and eyelashes, then the sclera, then then
-            cornea/iris/pupils
+            Trace an H with your fingers and check that both
+            eyes exhibit full range of motion
           </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            As you progress in your training, {"\n"}
-            you'll learn to identify findings characteristic of different
-            disease — for now, just note anything unusual you see
-          </Text>
+          <Image
+                style={styles.image}
+                source={H_Test}
+            />
         </View>
         </ScrollView>
       </SafeAreaView>
@@ -109,6 +101,11 @@ const styles = StyleSheet.create({
     },
     iconRight: {
       width: '15%'
+    },
+    image: {
+        height: 200,
+        width: 200,
+        marginBottom: 24
     },
     links: {
       flexDirection: 'row',
@@ -161,7 +158,7 @@ const styles = StyleSheet.create({
     },
     subTextSection: {
         fontSize: 18,
-        color: 'gray',
+        color: colors.grey,
         fontFamily: 'OpenSans',
         textAlign: 'center',
         marginLeft: 4,
@@ -194,6 +191,7 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
+        alignItems: 'center'
     },
     textLeft: {
       fontSize: Platform.OS === "android" ? 16: 18,
@@ -219,4 +217,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default InspectEyesScreen;
+export default TestMovements;

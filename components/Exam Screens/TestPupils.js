@@ -1,20 +1,20 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 
-const InspectEyesScreen = ({ navigation }) => {
+const TestPupils = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('ExamMenu')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TestMovements')}>
             <View style={styles.linkLeft}>
               <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
-              <Text style={styles.textLeft}>Exam Main</Text>
+              <Text style={styles.textLeft}>Test Movements</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TVFields')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TestVA')}>
             <View style={styles.linkRight}>
-              <Text style={styles.textRight}>Test Visual Fields</Text>
+              <Text style={styles.textRight}>Test Visual Acuity</Text>
               <Ionicons style={styles.iconRight} name="chevron-forward" size={30} color={colors.darkblue}/>
             </View>
           </TouchableOpacity>
@@ -22,44 +22,58 @@ const InspectEyesScreen = ({ navigation }) => {
         <View>
           <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
-            Inspect Eyelids {"\n"}
-            & Eyeballs
+            Test Pupils
           </Text>
         </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Tell the patient you'll be inspecting their eyes and ask for permission
-            to touch their eyelids
+            Tell the patient you'll be shining light in
+            their eyes and ask them to look at your nose
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Voy a examinar sus ojos. {"\n"}
-            ¿Puedo bajar sus párpados?
+            Voy a brillar una luz en sus ojos. {"\n"}
+            Mire a mi nariz por favor
           </Text>
           <Text style={styles.subTextSection}>
-            <Text>{" "}</Text>
-            I'm going to be examining your eyes. {"\n"}
-            May I touch your eyelids?
+            I'm going to be shining light into your eyes.
+            Please look at my nose.
+          </Text>
+        </View>
+        <View style={styles.sectionBox}>
+          <Text style={styles.section}>
+            tap to turn on/turn off your phone flashlight
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Examine from the outside in: {"\n"}
-            start with the eyelids and eyelashes, then the sclera, then then
-            cornea/iris/pupils
+            Dim the room lights
+          </Text>
+          <Text style={styles.subTextSection}>
+            if you can only turn the lights off, try
+            propping the hallway door open to get 
+            enough light to see what you're doing
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            As you progress in your training, {"\n"}
-            you'll learn to identify findings characteristic of different
-            disease — for now, just note anything unusual you see
+            Shine the light in each eye one at a time,
+            checking to see if the pupil in that 
+            eye contracts
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Shine the light in each eye one at a time
+            again, checking to see if the pupil on the opposite
+            side contracts
+          </Text>
+          <Text style={styles.subTextSection}>
+            for example, if you're shining the light in 
+            the right eye, check if the left pupil contracts
+            - it should!
           </Text>
         </View>
         </ScrollView>
@@ -110,6 +124,11 @@ const styles = StyleSheet.create({
     iconRight: {
       width: '15%'
     },
+    image: {
+        height: 200,
+        width: 200,
+        marginBottom: 24
+    },
     links: {
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -141,12 +160,11 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     section: {
-        fontSize: 20,
+        fontSize: 18,
         color: colors.darkblue,
         fontFamily: 'OpenSansBold',
         textAlign: 'center',
-        marginLeft: 2,
-        marginRight: 2
+        marginHorizontal: 10,
     },
     sectionBox: {
         borderWidth: 1,
@@ -157,11 +175,10 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
-
     },
     subTextSection: {
         fontSize: 18,
-        color: 'gray',
+        color: colors.grey,
         fontFamily: 'OpenSans',
         textAlign: 'center',
         marginLeft: 4,
@@ -194,6 +211,7 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
+        alignItems: 'center'
     },
     textLeft: {
       fontSize: Platform.OS === "android" ? 16: 18,
@@ -219,4 +237,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default InspectEyesScreen;
+export default TestPupils;

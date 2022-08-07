@@ -18,27 +18,27 @@ const ExamMenuScreen = ({ navigation }) => {
               Inspect eyelids and eyeballs
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("TVFields")}>
             <Text style={styles.section}>
               Test visual fields
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("TestMovements")}>
             <Text style={styles.section}>
               Test extraocular movements
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("TestPupils")}>
             <Text style={styles.section}>
               Test pupils
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("TestVA")}>
             <Text style={styles.section}>
               Test visual acuity
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("AdministerDrops")}>
             <Text style={styles.section}>
               Administer eye drops
             </Text>

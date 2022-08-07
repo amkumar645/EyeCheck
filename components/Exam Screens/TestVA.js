@@ -1,20 +1,20 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 
-const InspectEyesScreen = ({ navigation }) => {
+const TestVA = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('ExamMenu')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TestPupils')}>
             <View style={styles.linkLeft}>
               <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
-              <Text style={styles.textLeft}>Exam Main</Text>
+              <Text style={styles.textLeft}>Test Pupils</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TVFields')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('AdministerDrops')}>
             <View style={styles.linkRight}>
-              <Text style={styles.textRight}>Test Visual Fields</Text>
+              <Text style={styles.textRight}>Administer Drops</Text>
               <Ionicons style={styles.iconRight} name="chevron-forward" size={30} color={colors.darkblue}/>
             </View>
           </TouchableOpacity>
@@ -22,44 +22,69 @@ const InspectEyesScreen = ({ navigation }) => {
         <View>
           <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
-            Inspect Eyelids {"\n"}
-            & Eyeballs
+            Test Visual Acuity
           </Text>
         </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Tell the patient you'll be inspecting their eyes and ask for permission
-            to touch their eyelids
+            Hold the phone 14 inches (35 cm) away 
+            from patient's face
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Voy a examinar sus ojos. {"\n"}
-            ¿Puedo bajar sus párpados?
+            Ask the patient to close one eye
+            and read the smallest line they can
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            ¿Puede cerrar un ojo y leer la 
+            línea más pequeña que pueda?
           </Text>
           <Text style={styles.subTextSection}>
-            <Text>{" "}</Text>
-            I'm going to be examining your eyes. {"\n"}
-            May I touch your eyelids?
+            Can you close one eye and read the smallest
+            line you can?
+          </Text>
+        </View>
+        <TouchableOpacity onPress={() => navigation.navigate('SnellenNumerical')}>
+          <View style={styles.sectionBox}>
+            <Text style={styles.section}>
+              tap for a numerical Snellen eye chart
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('SnellenAlphabetical')}>
+          <View style={styles.sectionBox}>
+            <Text style={styles.section}>
+              tap for an alphabetical Snellen eye chart
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Repeat: ask the patient to close the 
+            other eye and read the smallest line they can
+            backwards
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Examine from the outside in: {"\n"}
-            start with the eyelids and eyelashes, then the sclera, then then
-            cornea/iris/pupils
+            Note the line and accuracy that the patient
+            read with each eye
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            As you progress in your training, {"\n"}
-            you'll learn to identify findings characteristic of different
-            disease — for now, just note anything unusual you see
+            Remember to note the contacts/glasses
+            prescription the patient may be wearing
+            during the exam
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Repeat using a Snellen chart for distance vision
           </Text>
         </View>
         </ScrollView>
@@ -110,6 +135,11 @@ const styles = StyleSheet.create({
     iconRight: {
       width: '15%'
     },
+    image: {
+        height: 200,
+        width: 200,
+        marginBottom: 24
+    },
     links: {
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -141,12 +171,11 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     section: {
-        fontSize: 20,
+        fontSize: 18,
         color: colors.darkblue,
         fontFamily: 'OpenSansBold',
         textAlign: 'center',
-        marginLeft: 2,
-        marginRight: 2
+        marginHorizontal: 10,
     },
     sectionBox: {
         borderWidth: 1,
@@ -157,11 +186,10 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
-
     },
     subTextSection: {
         fontSize: 18,
-        color: 'gray',
+        color: colors.grey,
         fontFamily: 'OpenSans',
         textAlign: 'center',
         marginLeft: 4,
@@ -194,6 +222,7 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
+        alignItems: 'center'
     },
     textLeft: {
       fontSize: Platform.OS === "android" ? 16: 18,
@@ -219,4 +248,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default InspectEyesScreen;
+export default TestVA;
