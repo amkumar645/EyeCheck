@@ -43,7 +43,7 @@ const PMHScreen = ({ navigation }) => {
             Do you have glaucoma, macular degeneration, cataracts, or amblyopia (lazy eye)?
           </Text>
         </View>
-        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.goBack()}>
+        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.navigate("AdministerDrops")}>
           <Text style={styles.examSection}>
             <Text>{" "}</Text>
             does your patient have diabetes or glaucoma? your supervising physician
