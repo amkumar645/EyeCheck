@@ -6,7 +6,7 @@ import Prednisolone from '../../assets/images/steroid_drops.png';
 import Timolol from '../../assets/images/glaucoma_drops.png';
 
 
-const PharmacyScreen = ({ navigation }) => {
+const PharmacyMenuScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
@@ -19,7 +19,7 @@ const PharmacyScreen = ({ navigation }) => {
           </View>
           <View style={styles.dropperContainer}>
             <View style={styles.item}>
-              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("Numbing")}>
                 <Text style={styles.section}>
                   numbing
                 </Text>
@@ -33,7 +33,7 @@ const PharmacyScreen = ({ navigation }) => {
               </TouchableOpacity>
             </View>
             <View style={styles.item}>
-              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("Dilating")}>
                 <Text style={styles.section}>
                   dilating
                 </Text>
@@ -47,7 +47,7 @@ const PharmacyScreen = ({ navigation }) => {
               </TouchableOpacity>
             </View>
             <View style={styles.item}>
-              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("Steroid")}>
                 <Text style={styles.section}>
                   steroid
                 </Text>
@@ -61,7 +61,7 @@ const PharmacyScreen = ({ navigation }) => {
               </TouchableOpacity>
             </View>
             <View style={styles.item}>
-              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
+              <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("Glaucoma")}>
                 <Text style={styles.section}>
                   glaucoma
                 </Text>
@@ -182,4 +182,4 @@ const PharmacyScreen = ({ navigation }) => {
       },
   });
 
-export default PharmacyScreen;
+export default PharmacyMenuScreen;

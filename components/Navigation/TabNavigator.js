@@ -9,7 +9,7 @@ import HistoryScreen from "./HistoryScreen";
 import AboutScreen from "../About/AboutScreen";
 import ExamScreen from "./ExamScreen";
 import GlossaryScreen from "./GlossaryScreen";
-import PharmacyScreen from "../Pharmacy Screens/PharmacyScreen";
+import PharmacyScreen from "./PharmacyScreen";
 
 const Tab = createBottomTabNavigator();
 
