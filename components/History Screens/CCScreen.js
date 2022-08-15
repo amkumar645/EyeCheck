@@ -1,8 +1,20 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import {useState} from 'react';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 
 const CCScreen = ({ navigation }) => {
+
+  const [spanFlag, setSpanFlag] = useState(true);
+
+  function handleClick() {
+    if (spanFlag) {
+      setSpanFlag(false)
+    } else{
+      setSpanFlag(true)
+    }
+  };
+
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
@@ -28,19 +40,26 @@ const CCScreen = ({ navigation }) => {
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            What's your name and age?
+            {spanFlag ? 'What\'s your name and age?' : '¿Cómo se llama?'}
           </Text>
         </View>
+        {!spanFlag &&
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              <Text>{" "}</Text>
+              ¿Cuántos años tienes?
+            </Text>
+          </View>}
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            What brings you in today?
+            {spanFlag ? 'What brings you in today?' : '¿Qué se trae hoy?'}
           </Text>
         </View>
-        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.goBack()}>
+        <TouchableOpacity  style={styles.sectionBox} onPress={handleClick}>
           <Text style={styles.section}>
             <Text>{" "}</Text>
-            Spanish translation
+            {spanFlag ? 'Spanish translation' : 'English translation'}
           </Text>
         </TouchableOpacity >
       </SafeAreaView>
