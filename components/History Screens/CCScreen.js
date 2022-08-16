@@ -42,6 +42,12 @@ const CCScreen = ({ navigation }) => {
             <Text>{" "}</Text>
             {spanFlag ? 'What\'s your name and age?' : '¿Cómo se llama?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              What's your name?
+            </Text>
+          }
         </View>
         {!spanFlag &&
           <View style={styles.textSectionBox}>
@@ -49,12 +55,22 @@ const CCScreen = ({ navigation }) => {
               <Text>{" "}</Text>
               ¿Cuántos años tienes?
             </Text>
+              <Text style={styles.subTextSection}>
+                <Text>{" "}</Text>
+                How old are you?
+              </Text>
           </View>}
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
             {spanFlag ? 'What brings you in today?' : '¿Qué se trae hoy?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              What brings you in today?
+            </Text>
+          }
         </View>
         <TouchableOpacity  style={styles.sectionBox} onPress={handleClick}>
           <Text style={styles.section}>
@@ -147,6 +163,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 20,
 
+    },
+    subTextSection: {
+        fontSize: 18,
+        color: 'gray',
+        fontFamily: 'OpenSans',
+        textAlign: 'center',
+        marginLeft: 4,
+        marginRight: 4,
+        marginBottom: 12
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,

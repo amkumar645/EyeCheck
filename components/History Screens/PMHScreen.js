@@ -1,9 +1,21 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import {useState} from 'react';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 
 
 const PMHScreen = ({ navigation }) => {
+
+  const [spanFlag, setSpanFlag] = useState(true);
+
+  function handleClick() {
+    if (spanFlag) {
+      setSpanFlag(false)
+    } else{
+      setSpanFlag(true)
+    }
+  };
+
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
@@ -30,19 +42,26 @@ const PMHScreen = ({ navigation }) => {
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Do you have any active medical problems?
+            {spanFlag ? 'Do you have any active medical problems?' : '¿Tiene algún problema médico activo?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            ask specifically about diabetes
+            {spanFlag ? 'ask specifically about diabetes' : 'Do you have any active medical problems?'}
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Do you have glaucoma, macular degeneration, cataracts, or amblyopia (lazy eye)?
+            {spanFlag ? 'Do you have glaucoma, macular degeneration, cataracts, or amblyopia (lazy eye)?' : '¿Tiene glaucoma, degeneración macular, cataratas o ambliopía?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              Do you have glaucoma, macular degeneration, cataracts, or amblyopia (lazy eye)?
+            </Text>
+          }
         </View>
+        {spanFlag &&
         <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.navigate("AdministerDrops")}>
           <Text style={styles.examSection}>
             <Text>{" "}</Text>
@@ -51,72 +70,121 @@ const PMHScreen = ({ navigation }) => {
             tap for instructions on administering drops
           </Text>
         </TouchableOpacity >
+      }
+      {!spanFlag &&
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Are you taking any medication?
+            ¿Tiene diabetes?
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            ask about dosage too
+            Do you have diabetes?
           </Text>
         </View>
+      }
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Are you allergic to any medication?
+            {spanFlag ? 'Are you taking any medication?' : '¿Está tomando algún medicamento?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            if yes, ask about the allergic reaction
+            {spanFlag ? 'ask about dosage too' : 'Are you taking any medication?'}
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Do you wear glasses or contacts?
+            {spanFlag ? 'Are you allergic to any medication?' : '¿Está tomando algún medicamento?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            ask about the prescription strength
+            {spanFlag ? 'if yes, ask about the allergic reaction' : 'Are you allergic to any medication?'}
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            When was your last eye exam?
+            {spanFlag ? 'Do you wear glasses or contacts?' : '¿Usa lentes o lentes de contactos?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            if they can remember, ask the patient about the results of that exam
+            {spanFlag ? 'ask about the prescription strength' : 'Do you wear glasses or contacts?'}
           </Text>
         </View>
+        {!spanFlag &&
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              <Text>{" "}</Text>
+              ¿Cuál es la graduación?
+            </Text>
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              What is the prescription strength?
+            </Text>
+          </View>
+        }
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Have you ever had eye surgery?
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Have you ever had any serious eye injuries?
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            <Text>{" "}</Text>
-            Are you currently using any eye drops or ointments?
+            {spanFlag ? 'When was your last eye exam?' : '¿Cuándo fue su último examen de la vista?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            not sure about the names of the eye medications? tap Pharmacy below
+            {spanFlag ? 'if they can remember, ask the patient about the results of that exam' : 'When was your last eye exam?'}
           </Text>
         </View>
-        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.goBack()}>
+        {!spanFlag &&
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              <Text>{" "}</Text>
+              ¿Que fueron los resultados de su último examen de la vista?
+            </Text>
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              What were the results of your last eye exam?
+            </Text>
+          </View>
+        }
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            <Text>{" "}</Text>
+            {spanFlag ? 'Have you ever had eye surgery?' : '¿Tuvo algún láser en los ojos o algunas cirugías?'}
+          </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              Have you ever had eye surgery?
+            </Text>
+          }
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            <Text>{" "}</Text>
+            {spanFlag ? 'Have you ever had any serious eye injuries?' : '¿Tuvo algún trauma de los ojos?'}
+          </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              Have you ever had any serious eye injuries?
+            </Text>
+          }
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            <Text>{" "}</Text>
+            {spanFlag ? 'Are you currently using any eye drops or ointments?' : '¿Está usando gotas para los ojos o ungüentos?'}
+          </Text>
+          <Text style={styles.subTextSection}>
+            <Text>{" "}</Text>
+            {spanFlag ? 'not sure about the names of the eye medications? tap Pharmacy below' : 'Are you currently using any eye drops or ointments?'}
+          </Text>
+        </View>
+        <TouchableOpacity  style={styles.sectionBox} onPress={handleClick}>
           <Text style={styles.section}>
             <Text>{" "}</Text>
-            Spanish translation
+            {spanFlag ? 'Spanish translation' : 'English translation'}
           </Text>
         </TouchableOpacity >
         </ScrollView>

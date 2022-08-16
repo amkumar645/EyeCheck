@@ -1,9 +1,21 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import {useState} from 'react';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 
 
 const FHScreen = ({ navigation }) => {
+
+  const [spanFlag, setSpanFlag] = useState(true);
+
+  function handleClick() {
+    if (spanFlag) {
+      setSpanFlag(false)
+    } else{
+      setSpanFlag(true)
+    }
+  };
+
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
@@ -27,8 +39,9 @@ const FHScreen = ({ navigation }) => {
           </Text>
         </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-       
+
         <View style={styles.textSectionBox}>
+        {spanFlag &&
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
             Does anyone in your immediate family have:{"\n"}
@@ -39,42 +52,101 @@ const FHScreen = ({ navigation }) => {
             retinal detachment,{"\n"}
             or eye cancer?
           </Text>
+          }
+          {!spanFlag &&
+            <Text style={styles.textSection}>
+              <Text>{" "}</Text>
+              ¿Tiene parientes con:{"\n"}
+              cegera, glaucoma,{"\n"}
+              degeneración macular,{"\n"}
+              estrabismo,{"\n"}
+              desprendimiento de retina,{"\n"}
+              o tumor ocular?
+            </Text>
+            }
+            {!spanFlag &&
+              <Text style={styles.subTextSection}>
+                <Text>{" "}</Text>
+                Does anyone in your immediate family have:
+                blindness,
+                glaucoma,
+                macular degeneration,
+                strabismus,
+                retinal detachment,
+                or eye cancer?
+              </Text>
+            }
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Do you drink alcohol?
+            {spanFlag ? 'Do you drink alcohol?' : '¿Bebe alcohol?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            if yes, ask about how much in a week
+            {spanFlag ? 'if yes, ask about how much in a week' : 'Do you drink alcohol?'}
           </Text>
         </View>
+        {!spanFlag &&
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              <Text>{" "}</Text>
+              ¿Con que frequencia bebe alcohol?
+            </Text>
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              How often do you drink alcohol?
+            </Text>
+          </View>
+        }
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Do you smoke or use tobacco products?
+            {spanFlag ? 'Do you smoke or use tobacco products?' : '¿Fuma o usa tabaco?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            if yes, ask about how many in a week
+            {spanFlag ? 'if yes, ask about how many in a week' : 'Do you smoke or use tobacco products?'}
           </Text>
         </View>
+        {!spanFlag &&
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              <Text>{" "}</Text>
+              ¿Con que frequencia usa tabaco?
+            </Text>
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              How often do you use tabaco?
+            </Text>
+          </View>
+        }
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Are you currently working?
+            {spanFlag ? 'Are you currently working?' : '¿Está empleado?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>
-            if yes, ask where and note if their job involves potential hazards
-            to the eyes (like construction) or irritating chemicals (like cleaning)
+            {spanFlag ? 'if yes, ask where and note if their job involves potential hazards to the eyes (like construction) or irritating chemicals (like cleaning)' : 'Are you currently working?'}
           </Text>
         </View>
-        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.goBack()}>
+        {!spanFlag &&
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              <Text>{" "}</Text>
+              ¿En qué trabaja?
+            </Text>
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              What is your current job?
+            </Text>
+          </View>
+        }
+        <TouchableOpacity  style={styles.sectionBox} onPress={handleClick}>
           <Text style={styles.section}>
             <Text>{" "}</Text>
-            Spanish translation
+            {spanFlag ? 'Spanish translation' : 'English translation'}
           </Text>
         </TouchableOpacity >
         </ScrollView>

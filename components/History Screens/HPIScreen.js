@@ -1,9 +1,21 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
+import {useState} from 'react';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 
 
 const HPIScreen = ({ navigation }) => {
+
+  const [spanFlag, setSpanFlag] = useState(true);
+
+  function handleClick() {
+    if (spanFlag) {
+      setSpanFlag(false)
+    } else{
+      setSpanFlag(true)
+    }
+  };
+
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
@@ -30,37 +42,67 @@ const HPIScreen = ({ navigation }) => {
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            When did the symptoms begin?
+            {spanFlag ? 'When did the symptoms begin?' : '¿Cuándo comenzaron los síntomas?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              When did the symptoms begin?
+            </Text>
+          }
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Does anything make the symptoms better or worse?
+            {spanFlag ? 'Does anything make the symptoms better or worse?' : '¿Hay algo que mejore o empeora los síntomas?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              Does anything make the symptoms better or worse?
+            </Text>
+          }
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            In which eye do you experience the symptoms? Left? Right? Both?
+            {spanFlag ? 'In which eye do you experience the symptoms? Left? Right? Both?' : '¿En qué ojo siente los síntomas? ¿Derecho? ¿Izquierdo? ¿Ambos?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              In which eye do you experience the symptoms? Left? Right? Both?
+            </Text>
+          }
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Have you experienced these symptoms before?
+            {spanFlag ? 'Have you experienced these symptoms before?' : '¿Ha sentido esto en el pasado?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              Have you experienced these symptoms before?
+            </Text>
+          }
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            Are you experiencing any other symptoms alongside the main symptoms?
+            {spanFlag ? 'Are you experiencing any other symptoms alongside the main symptoms?' : '¿Siente algo más?'}
           </Text>
+          {!spanFlag &&
+            <Text style={styles.subTextSection}>
+              <Text>{" "}</Text>
+              Are you experiencing any other symptoms alongside the main symptoms?
+            </Text>
+          }
         </View>
-        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.goBack()}>
+        <TouchableOpacity  style={styles.sectionBox} onPress={handleClick}>
           <Text style={styles.section}>
             <Text>{" "}</Text>
-            Spanish translation
+            {spanFlag ? 'Spanish translation' : 'English translation'}
           </Text>
         </TouchableOpacity >
         </ScrollView>
@@ -151,6 +193,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 20,
 
+    },
+    subTextSection: {
+        fontSize: 18,
+        color: 'gray',
+        fontFamily: 'OpenSans',
+        textAlign: 'center',
+        marginLeft: 4,
+        marginRight: 4,
+        marginBottom: 12
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
