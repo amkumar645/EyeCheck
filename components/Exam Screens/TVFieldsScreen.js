@@ -21,7 +21,6 @@ const TVFieldsScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
             Test Visual {"\n"}
             Fields
@@ -40,7 +39,7 @@ const TVFieldsScreen = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Ask the patient to look at {"\n"} 
+            Ask the patient to look at {"\n"}
             your nose
           </Text>
         </View>
@@ -66,7 +65,7 @@ const TVFieldsScreen = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Ask the patient to look at {"\n"} 
+            Ask the patient to look at {"\n"}
             your nose
           </Text>
         </View>
@@ -205,7 +204,8 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginBottom: 30,
+        marginTop: 30,
+        marginBottom: 10,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

@@ -21,7 +21,6 @@ const TestMovements = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
             Test Extraocular {"\n"}
             Movements
@@ -30,7 +29,7 @@ const TestMovements = ({ navigation }) => {
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Ask patient to follow your finger with their 
+            Ask patient to follow your finger with their
             eyes without moving their head
           </Text>
         </View>
@@ -40,7 +39,7 @@ const TestMovements = ({ navigation }) => {
             la cabeza?
           </Text>
           <Text style={styles.subTextSection}>
-            Can you please follow my finger with 
+            Can you please follow my finger with
             your eyes without moving your head?
           </Text>
         </View>
@@ -167,7 +166,8 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginBottom: 30,
+        marginBottom: 10,
+        marginTop: 30,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

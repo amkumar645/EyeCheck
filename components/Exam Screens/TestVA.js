@@ -20,7 +20,6 @@ const TestVA = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
             Test Visual Acuity
           </Text>
@@ -28,7 +27,7 @@ const TestVA = ({ navigation }) => {
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Hold the phone 14 inches (35 cm) away 
+            Hold the phone 14 inches (35 cm) away
             from patient's face
           </Text>
         </View>
@@ -40,7 +39,7 @@ const TestVA = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            ¿Puede cerrar un ojo y leer la 
+            ¿Puede cerrar un ojo y leer la
             línea más pequeña que pueda?
           </Text>
           <Text style={styles.subTextSection}>
@@ -64,7 +63,7 @@ const TestVA = ({ navigation }) => {
         </TouchableOpacity>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Repeat: ask the patient to close the 
+            Repeat: ask the patient to close the
             other eye and read the smallest line they can
             backwards
           </Text>
@@ -198,7 +197,8 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginBottom: 30,
+        marginTop: 30,
+        marginBottom: 10,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

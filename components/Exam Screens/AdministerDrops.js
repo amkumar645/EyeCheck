@@ -22,7 +22,6 @@ const AdministerDrops = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
             Administer Eye Drops
           </Text>
@@ -38,7 +37,7 @@ const AdministerDrops = ({ navigation }) => {
           </Text>
           <Text style={styles.subTextSection}>
             Use these to numb eyes before administering
-            dilating drops. Can also be used in fluoroscein 
+            dilating drops. Can also be used in fluoroscein
             tests.
           </Text>
         </View>
@@ -75,7 +74,7 @@ const AdministerDrops = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Put 1 drop in between the eyeball and 
+            Put 1 drop in between the eyeball and
             lower eyelid
           </Text>
           <Text style={styles.subTextSection}>
@@ -212,7 +211,8 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginBottom: 30,
+        marginBottom: 10,
+        marginTop: 30,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

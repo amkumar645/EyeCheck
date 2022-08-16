@@ -32,7 +32,6 @@ const CCScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>HISTORY</Text>
           <Text style={styles.subtitle}>
             CHIEF COMPLAINT
           </Text>
@@ -175,6 +174,7 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
+        marginTop: 30,
         marginBottom: 30,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',

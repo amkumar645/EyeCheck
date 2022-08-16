@@ -20,7 +20,6 @@ const TestPupils = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>EXAM</Text>
           <Text style={styles.subtitle}>
             Test Pupils
           </Text>
@@ -53,14 +52,14 @@ const TestPupils = ({ navigation }) => {
           </Text>
           <Text style={styles.subTextSection}>
             if you can only turn the lights off, try
-            propping the hallway door open to get 
+            propping the hallway door open to get
             enough light to see what you're doing
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             Shine the light in each eye one at a time,
-            checking to see if the pupil in that 
+            checking to see if the pupil in that
             eye contracts
           </Text>
         </View>
@@ -71,7 +70,7 @@ const TestPupils = ({ navigation }) => {
             side contracts
           </Text>
           <Text style={styles.subTextSection}>
-            for example, if you're shining the light in 
+            for example, if you're shining the light in
             the right eye, check if the left pupil contracts
             - it should!
           </Text>
@@ -187,7 +186,8 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginBottom: 30,
+        marginTop: 30,
+        marginBottom: 10,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

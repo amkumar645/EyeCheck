@@ -33,7 +33,6 @@ const PMHScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>HISTORY</Text>
           <Text style={styles.subtitle}>
             PAST MEDICAL HISTORY
           </Text>
@@ -296,7 +295,8 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginBottom: 30,
+        marginTop: 30,
+        marginBottom: 10,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'
