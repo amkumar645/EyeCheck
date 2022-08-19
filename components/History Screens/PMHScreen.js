@@ -61,7 +61,7 @@ const PMHScreen = ({ navigation }) => {
           }
         </View>
         {spanFlag &&
-        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.navigate("AdministerDrops")}>
+        <TouchableOpacity  style={styles.sectionBox} onPress={() => navigation.navigate('EXAM', { screen: 'AdministerDrops' })}>
           <Text style={styles.examSection}>
             <Text>{" "}</Text>
             does your patient have diabetes or glaucoma? your supervising physician

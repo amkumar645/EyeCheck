@@ -13,28 +13,28 @@ const HomeScreen = ({ navigation }) => {
           style={styles.logo}
           source={logo}
         />
-        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('HISTORY')}>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('HISTORY', { screen: 'HistoryMenu' })}>
           <Text style={styles.section}>
             <FontAwesome5 style={styles.icon} name={'book-open'}/>
             <Text>{" "}</Text>
             History
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('EXAM')}>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('EXAM', { screen: 'ExamMenu' })}>
           <Text style={styles.section}>
             <Entypo style={styles.icon} name={'magnifying-glass'}/>
             <Text>{" "}</Text>
             Exam
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('PHARMACY')}>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('PHARMACY', { screen: 'PharmacyMenu' })}>
           <Text style={styles.section}>
             <FontAwesome5 style={styles.icon} name={'eye-dropper'}/>
             <Text>{" "}</Text>
             Pharmacy
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('GLOSSARY')}>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('GLOSSARY', { screen: 'GlossaryMenu' })}>
           <Text style={styles.section}>
             <FontAwesome5 style={styles.icon} name={'question'}/>
             <Text>{"  "}</Text>

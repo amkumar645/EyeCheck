@@ -1,78 +1,41 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ExamMenuScreen from "../Exam Screens/ExamMenuScreen";
+import InspectEyesScreen from "../Exam Screens/InspectEyesScreen";
+import TVFieldsScreen from '../Exam Screens/TVFieldsScreen';
+import TestMovements from '../Exam Screens/TestMovements';
+import TestPupils from '../Exam Screens/TestPupils';
+import TestVA from '../Exam Screens/TestVA';
+import SnellenNumerical from '../Exam Screens/SnellenNumerical';
+import SnellenAlphabetical from '../Exam Screens/SnellenAlphabetical';
+import AdministerDrops from '../Exam Screens/AdministerDrops';
+import GlossaryMenuScreen from '../Glossary Screens/GlossaryMenuScreen';
+import SpanishGlossary from '../Glossary Screens/SpanishGlossary';
+import OphthalmologyGlossary from '../Glossary Screens/OphthalmologyGlossary';
 
-const GlossaryScreen = ({ navigation }) => {
+const Stack = createNativeStackNavigator();
+
+const GlossaryScreen = () => {
     return (
-        <SafeAreaView style={styles.container}>
-          <View>
-            <Text style={styles.title}>Glossary</Text>
-          </View>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
-            <Text style={styles.section}>
-              <Text>{" "}</Text>
-              Spanish glossary
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.goBack()}>
-            <Text style={styles.section}>
-              <Text>{" "}</Text>
-              Ophthalmology glossary
-            </Text>
-          </TouchableOpacity>
-        </SafeAreaView>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="GlossaryMenu"
+          component={GlossaryMenuScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SpanishGlossary"
+          component={SpanishGlossary}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="OphtalmologyGlossary"
+          component={OphthalmologyGlossary}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
       );
   }
-
-  const styles = StyleSheet.create({
-      container: {
-          flex: 1,
-          backgroundColor: colors.bgwhite,
-          alignItems: 'center',
-          marginLeft: 10,
-          marginRight: 10,
-          marginTop: Platform.OS === "android" ? 60: 100,
-      },
-      description: {
-        fontSize: Platform.OS === "android" ? 17: 17,
-        fontFamily: 'OpenSansBold',
-        marginBottom: 30,
-        color: 'black',
-        textAlign: 'center',
-        marginRight: 30,
-        marginLeft: 30
-      },
-      footer: {
-          fontSize: Platform.OS === "android" ? 20: 25,
-          color: colors.darkblue,
-          fontFamily: 'Copperplate',
-          marginTop: 20,
-      },
-      section: {
-          fontSize: Platform.OS === "android" ? 20: 20,
-          color: colors.darkblue,
-          fontFamily: 'OpenSansBold',
-          textAlign: 'center',
-          marginLeft: 2,
-          marginRight: 2
-      },
-      sectionBox: {
-          borderWidth: 1,
-          borderColor: colors.darkblue,
-          backgroundColor: colors.lightblue,
-          borderRadius: 5,
-          width: 200,
-          minHeight: 190,
-          justifyContent: 'center',
-          marginBottom: 20,
-
-      },
-      title: {
-          fontSize: Platform.OS === "android" ? 60: 70,
-          marginBottom: 100,
-          color: colors.darkerblue,
-          fontFamily: 'Copperplate',
-          textAlign: 'center'
-      },
-  });
 
 export default GlossaryScreen;
