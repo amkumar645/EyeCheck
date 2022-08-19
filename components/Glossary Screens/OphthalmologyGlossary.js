@@ -27,12 +27,60 @@ const OphthalmologyGlossary = ({ navigation }) => {
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
+            amblyopia
+          </Text>
+          <Text style={styles.textSection2}>
+            lazy eye
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            cataract
+          </Text>
+          <Text style={styles.textSection2}>
+            cloudy lens
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            diabetic retinopathy
+          </Text>
+          <Text style={styles.textSection2}>
+            ocular blood vessel growth in patients with diabetes
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
             glaucoma
           </Text>
           <Text style={styles.textSection2}>
-            elevated pressure blah blah blah
+            elevated pressure inside of the eye
           </Text>
         </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            macular degeneration
+          </Text>
+          <Text style={styles.textSection2}>
+            thinning of part of the retina called the macula
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            retina
+          </Text>
+          <Text style={styles.textSection2}>
+            thin layer of tissue that lines the back of the eye
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            strabismus
+          </Text>
+          <Text style={styles.textSection2}>
+            crossed eyes
+          </Text>
+      </View>
         </ScrollView>
       </SafeAreaView>
     );
@@ -126,7 +174,7 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 35: 40,
-        marginBottom: 20,
+        marginBottom: 10,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

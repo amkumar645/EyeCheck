@@ -52,8 +52,8 @@ const NumbingScreen = ({ navigation }) => {
             {"\n"}
             2) hand the patient a tissue to dry their eyes
             {"\n"}
-            3) if you're putting in more drops after these (like 
-            dilating drops) wait 60 second to allow these drops to work
+            3) if you're putting in more drops after these (like
+            dilating drops), wait 60 seconds to allow these drops to work
           </Text>
         </View>
         <View style={styles.textSectionBox}>

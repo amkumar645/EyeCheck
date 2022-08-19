@@ -31,25 +31,49 @@ const DilatingScreen = ({ navigation }) => {
         </View>
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <Image source={Tropicamide} style={styles.image}></Image>
-        <View style={styles.textView}>
-          <Text style={styles.textBold}>Name:&nbsp;</Text>
-          <Text style={styles.text}>Tropicamide (Red Cap)</Text>
-        </View>
-        <View style={styles.textView}>
-          <Text style={styles.textBold}>Indications:&nbsp;</Text>
-          <Text style={styles.text}>Glaucoma, Diabetes</Text>
-        </View>
-        <Text style={styles.text}>Ask patient for permission to add</Text>
-          <Text style={styles.textBold}>numbing drops before dilating drops</Text>
-          <View style={styles.textView2}>
-            <Text style={styles.text}>at the</Text>
-            <Text style={styles.textBold}>&nbsp;beginning&nbsp;</Text>
-            <Text style={styles.text}>of the visit</Text>
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              use
+            </Text>
+            <Text style={styles.textSection2}>
+              after numbing drops and in most procedures
+              where you need to touch the patient's eye
+            </Text>
+            <Text style={styles.textSection3}>
+              examples: tonometry applanation to check intraocular
+              pressure & fluorescein staining to check dry eye
+            </Text>
           </View>
-          <View style={styles.textView2}>
-            <Text style={styles.text}>since they take</Text>
-            <Text style={styles.textBold}>&nbsp;30 mins&nbsp;</Text>
-            <Text style={styles.text}>to work</Text>
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              best practices
+            </Text>
+            <Text style={styles.textSection2}>
+              1) tell the patient you'll be putting in eye drops
+              {"\n"}
+              2) hand the patient a tissue to dry their eyes
+              {"\n"}
+              3) wait 30 minutes to allow these drops to work
+            </Text>
+          </View>
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              warning
+            </Text>
+            <Text style={styles.textSection2}>
+              these drops may sting
+              patients with dry or sensitive eyes
+              {"\n"}
+              (but they're safe to use!)
+            </Text>
+          </View>
+          <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              see the Exam section
+            </Text>
+            <Text style={styles.textSection2}>
+              for instructions on administering drops
+            </Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -157,6 +181,41 @@ const styles = StyleSheet.create({
     textBold: {
       fontFamily: 'OpenSansBold',
       fontSize: Platform.OS === "android" ? 18: 18,
+    },
+    textSection: {
+        fontSize: 17,
+        color: colors.darkerblue,
+        fontFamily: 'OpenSansBold',
+        textAlign: 'left',
+        marginLeft: 10,
+        marginTop: 5
+    },
+    textSection2: {
+        fontSize: 17,
+        color: colors.grey,
+        fontFamily: 'OpenSans',
+        textAlign: 'left',
+        marginLeft: 10,
+        marginBottom: 10,
+        marginRight: 50
+    },
+    textSection3: {
+        fontSize: 14,
+        color: colors.grey,
+        fontFamily: 'OpenSans',
+        textAlign: 'left',
+        marginLeft: 10,
+        marginBottom: 10,
+        marginRight: 50,
+    },
+    textSectionBox: {
+        borderWidth: 1,
+        borderColor: "gray",
+        backgroundColor: 'white',
+        borderRadius: 5,
+        width: 323,
+        minHeight: 84,
+        marginBottom: 20,
     },
     textView: {
       flexDirection: 'row',
