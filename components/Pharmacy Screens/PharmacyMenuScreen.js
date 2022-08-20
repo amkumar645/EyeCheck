@@ -74,7 +74,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
                 </Text>
               </TouchableOpacity>
             </View>
-          
+
           </View>
           <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.navigate('PMH')}>
             <Text style={styles.sectionBottom}>
@@ -97,8 +97,8 @@ const PharmacyMenuScreen = ({ navigation }) => {
           backgroundColor: colors.bgwhite,
           marginLeft: 10,
           marginRight: 10,
-          marginTop: Platform.OS === "android" ? 60: 60,
-          marginBottom: 120,
+          marginTop: 30,
+          marginBottom: 70,
       },
       dropperContainer: {
         flexDirection: 'row',

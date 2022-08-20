@@ -19,7 +19,6 @@ const SpanishGlossary = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>Glossary</Text>
           <Text style={styles.subtitle}>
             Spanish Glossary
           </Text>
@@ -271,6 +270,7 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: Platform.OS === "android" ? 35: 40,
         marginBottom: 10,
+        marginTop:20,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

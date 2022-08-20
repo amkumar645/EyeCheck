@@ -10,7 +10,7 @@ const ExamMenuScreen = ({ navigation }) => {
               Find a workflow that works for you!
             </Text>
           </View>
-        <ScrollView 
+        <ScrollView
         contentContainerStyle={{flexGrow : 1, alignItems : 'center'}}
         style={styles.scrollView} showsVerticalScrollIndicator={false}>
           <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate("InspectEyes")}>
@@ -55,12 +55,12 @@ const ExamMenuScreen = ({ navigation }) => {
           alignItems: 'center',
       },
       scrollView: {
-          marginBottom: 120,
+          marginBottom: 70,
       },
       description: {
         fontSize: Platform.OS === "android" ? 17: 17,
         fontFamily: 'OpenSansBold',
-        marginBottom: 30,
+        marginBottom: 10,
         color: 'black',
         textAlign: 'center',
         marginRight: 30,

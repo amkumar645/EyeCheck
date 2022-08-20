@@ -21,11 +21,9 @@ const SteroidScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={styles.title}>Pharmacy</Text>
           <Text style={styles.subtitle}>
             Steroid Drops
-          </Text>
-          <Text style={styles.subtitle}>
+          {"\n"}
             Prednisolone
           </Text>
         </View>
@@ -155,6 +153,7 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
         marginBottom: 5,
+        marginTop:20,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'
