@@ -31,13 +31,34 @@ const GlaucomaScreen = ({ navigation }) => {
         </View>
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <Image source={Timolol} style={styles.image}></Image>
-        <View style={styles.textView}>
-          <Text style={styles.textBold}>Name:&nbsp;</Text>
-          <Text style={styles.text}>Timolol (Yellow Cap)</Text>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            best practices
+          </Text>
+          <Text style={styles.textSection2}>
+            1) tell the patient you'll be putting in eye drops
+            {"\n"}
+            2) hand the patient a tissue to dry their eyes
+          </Text>
         </View>
-        <View style={styles.textView}>
-          <Text style={styles.textBold}>Indications:&nbsp;</Text>
-          <Text style={styles.text}>Glaucoma</Text>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            warning
+          </Text>
+          <Text style={styles.textSection2}>
+            these drops may sting
+            patients with dry or sensitive eyes
+            {"\n"}
+            (but they're safe to use!)
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            see the Exam section
+          </Text>
+          <Text style={styles.textSection2}>
+            for instructions on administering drops
+          </Text>
         </View>
         </ScrollView>
       </SafeAreaView>
@@ -145,6 +166,41 @@ const styles = StyleSheet.create({
     textBold: {
       fontFamily: 'OpenSansBold',
       fontSize: Platform.OS === "android" ? 18: 18,
+    },
+    textSection: {
+        fontSize: 17,
+        color: colors.darkerblue,
+        fontFamily: 'OpenSansBold',
+        textAlign: 'left',
+        marginLeft: 10,
+        marginTop: 5
+    },
+    textSection2: {
+        fontSize: 17,
+        color: colors.grey,
+        fontFamily: 'OpenSans',
+        textAlign: 'left',
+        marginLeft: 10,
+        marginBottom: 10,
+        marginRight: 50
+    },
+    textSection3: {
+        fontSize: 14,
+        color: colors.grey,
+        fontFamily: 'OpenSans',
+        textAlign: 'left',
+        marginLeft: 10,
+        marginBottom: 10,
+        marginRight: 50,
+    },
+    textSectionBox: {
+        borderWidth: 1,
+        borderColor: "gray",
+        backgroundColor: 'white',
+        borderRadius: 5,
+        width: 323,
+        minHeight: 84,
+        marginBottom: 20,
     },
     textView: {
       flexDirection: 'row',
