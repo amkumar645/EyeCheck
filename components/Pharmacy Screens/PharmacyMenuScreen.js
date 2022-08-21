@@ -24,7 +24,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
                   numbing
                 </Text>
                 <Image
-                  style={styles.image}
+                  style={styles.image1}
                   source={Proparacaine}
                 />
                 <Text style={styles.sectionSubtitle}>
@@ -38,7 +38,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
                   dilating
                 </Text>
                 <Image
-                  style={styles.image}
+                  style={styles.image2}
                   source={Tropicamide}
                 />
                 <Text style={styles.sectionSubtitle}>
@@ -52,7 +52,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
                   steroid
                 </Text>
                 <Image
-                  style={styles.image}
+                  style={styles.image2}
                   source={Prednisolone}
                 />
                 <Text style={styles.sectionSubtitle}>
@@ -66,7 +66,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
                   glaucoma
                 </Text>
                 <Image
-                  style={styles.image}
+                  style={styles.image4}
                   source={Timolol}
                 />
                 <Text style={styles.sectionSubtitle}>
@@ -76,7 +76,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
             </View>
 
           </View>
-          <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.navigate('PMH')}>
+          <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.navigate('HISTORY', { screen: 'PMH' })}>
             <Text style={styles.sectionBottom}>
               Came here from Past Medical History?
               Tap to go back
@@ -123,6 +123,21 @@ const PharmacyMenuScreen = ({ navigation }) => {
           height: 100,
           width: 60,
           marginVertical: 6
+      },
+      image1: {
+        height: 100,
+        width: 80,
+        marginVertical: 6
+      },
+      image2: {
+        height: 100,
+        width: 100,
+        marginVertical: 6
+      },
+      image4: {
+        height: 100,
+        width: 40,
+        marginVertical: 6
       },
       item: {
         width: '50%',

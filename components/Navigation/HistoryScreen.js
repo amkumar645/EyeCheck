@@ -1,5 +1,3 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView} from 'react-native';
-import { colors } from '../utils/colors';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HistoryMenuScreen from "../History Screens/HistoryMenuScreen";
 import CCScreen from "../History Screens/CCScreen";
@@ -8,10 +6,19 @@ import PMHScreen from "../History Screens/PMHScreen";
 import FHScreen from "../History Screens/FHScreen";
 
 const Stack = createNativeStackNavigator();
+const forFade = ({ current }) => ({
+  cardStyle: {
+    opacity: current.progress,
+  },
+});
 
 const HistoryScreen = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator 
+        screenOptions={{
+        headerShown: false, 
+        cardStyleInterpolator: forFade
+      }}>
         <Stack.Screen
           name="HistoryMenu"
           component={HistoryMenuScreen}

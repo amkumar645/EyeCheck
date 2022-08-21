@@ -98,8 +98,9 @@ const styles = StyleSheet.create({
       width: '15%'
     },
     image: {
-        height: 175,
+        height: 300,
         width: 115,
+        marginTop: 10,
         marginBottom: 30
     },
     links: {

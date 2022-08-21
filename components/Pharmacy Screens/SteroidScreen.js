@@ -98,9 +98,9 @@ const styles = StyleSheet.create({
       width: '15%'
     },
     image: {
-        height: 175,
+        height: 300,
         width: 115,
-        marginBottom: 30
+        marginVertical: 10
     },
     links: {
       flexDirection: 'row',

@@ -1,5 +1,3 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, ScrollView} from 'react-native';
-import { colors } from '../utils/colors';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ExamMenuScreen from "../Exam Screens/ExamMenuScreen";
 import InspectEyesScreen from "../Exam Screens/InspectEyesScreen";
@@ -11,11 +9,21 @@ import SnellenNumerical from '../Exam Screens/SnellenNumerical';
 import SnellenAlphabetical from '../Exam Screens/SnellenAlphabetical';
 import AdministerDrops from '../Exam Screens/AdministerDrops';
 
+
 const Stack = createNativeStackNavigator();
+const forFade = ({ current }) => ({
+  cardStyle: {
+    opacity: current.progress,
+  },
+});
 
 const ExamScreen = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator 
+        screenOptions={{
+        headerShown: false, 
+        cardStyleInterpolator: forFade
+      }}>
         <Stack.Screen
           name="ExamMenu"
           component={ExamMenuScreen}

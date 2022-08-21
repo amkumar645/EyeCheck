@@ -1,5 +1,3 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, ScrollView} from 'react-native';
-import { colors } from '../utils/colors';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PharmacyMenuScreen from '../Pharmacy Screens/PharmacyMenuScreen';
 import NumbingScreen from '../Pharmacy Screens/NumbingScreen';
@@ -8,10 +6,19 @@ import SteroidScreen from '../Pharmacy Screens/SteroidScreen';
 import GlaucomaScreen from '../Pharmacy Screens/GlaucomaScreen';
 
 const Stack = createNativeStackNavigator();
+const forFade = ({ current }) => ({
+  cardStyle: {
+    opacity: current.progress,
+  },
+});
 
 const PharmacyScreen = () => {
     return (
-      <Stack.Navigator>
+      <Stack.Navigator 
+      screenOptions={{
+      headerShown: false, 
+      cardStyleInterpolator: forFade
+      }}>
         <Stack.Screen
           name="PharmacyMenu"
           component={PharmacyMenuScreen}
