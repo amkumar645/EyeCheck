@@ -1,22 +1,20 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import GlossaryMenuScreen from '../Glossary Screens/GlossaryMenuScreen';
 import SpanishGlossary from '../Glossary Screens/SpanishGlossary';
 import OphthalmologyGlossary from '../Glossary Screens/OphthalmologyGlossary';
 
-const Stack = createNativeStackNavigator();
-const forFade = ({ current }) => ({
-  cardStyle: {
-    opacity: current.progress,
-  },
-});
+const Stack = createStackNavigator();
 
 const GlossaryScreen = () => {
     return (
       <Stack.Navigator 
         screenOptions={{
-        headerShown: false, 
-        cardStyleInterpolator: forFade
-      }}>
+        headerShown: false,
+        cardStyleInterpolator:CardStyleInterpolators.forFadeFromCenter
+        // This is the other one that doesn't fade, it scales
+        // cardStyleInterpolator:CardStyleInterpolators.forScaleFromCenterAndroid
+      }}
+      >
         <Stack.Screen
           name="GlossaryMenu"
           component={GlossaryMenuScreen}

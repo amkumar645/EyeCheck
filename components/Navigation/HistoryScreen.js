@@ -1,24 +1,22 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import HistoryMenuScreen from "../History Screens/HistoryMenuScreen";
 import CCScreen from "../History Screens/CCScreen";
 import HPIScreen from "../History Screens/HPIScreen";
 import PMHScreen from "../History Screens/PMHScreen";
 import FHScreen from "../History Screens/FHScreen";
 
-const Stack = createNativeStackNavigator();
-const forFade = ({ current }) => ({
-  cardStyle: {
-    opacity: current.progress,
-  },
-});
+const Stack = createStackNavigator();
 
 const HistoryScreen = () => {
     return (
       <Stack.Navigator 
         screenOptions={{
-        headerShown: false, 
-        cardStyleInterpolator: forFade
-      }}>
+        headerShown: false,
+        cardStyleInterpolator:CardStyleInterpolators.forFadeFromCenter
+        // This is the other one that doesn't fade, it scales
+        // cardStyleInterpolator:CardStyleInterpolators.forScaleFromCenterAndroid
+      }}
+      >
         <Stack.Screen
           name="HistoryMenu"
           component={HistoryMenuScreen}

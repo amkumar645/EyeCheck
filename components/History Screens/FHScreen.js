@@ -25,7 +25,7 @@ const FHScreen = ({ navigation }) => {
               <Text style={styles.textLeft}>Past Medical History</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('EXAM')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('EXAM', { screen: 'ExamMenu' })}>
             <View style={styles.linkRight}>
               <Text style={styles.textRight}>Exam Main</Text>
               <Ionicons style={styles.iconRight} name="chevron-forward" size={30} color={colors.darkblue}/>

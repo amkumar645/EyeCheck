@@ -1,4 +1,4 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import ExamMenuScreen from "../Exam Screens/ExamMenuScreen";
 import InspectEyesScreen from "../Exam Screens/InspectEyesScreen";
 import TVFieldsScreen from '../Exam Screens/TVFieldsScreen';
@@ -9,21 +9,18 @@ import SnellenNumerical from '../Exam Screens/SnellenNumerical';
 import SnellenAlphabetical from '../Exam Screens/SnellenAlphabetical';
 import AdministerDrops from '../Exam Screens/AdministerDrops';
 
-
-const Stack = createNativeStackNavigator();
-const forFade = ({ current }) => ({
-  cardStyle: {
-    opacity: current.progress,
-  },
-});
+const Stack = createStackNavigator();
 
 const ExamScreen = () => {
     return (
       <Stack.Navigator 
         screenOptions={{
-        headerShown: false, 
-        cardStyleInterpolator: forFade
-      }}>
+        headerShown: false,
+        cardStyleInterpolator:CardStyleInterpolators.forFadeFromCenter
+        // This is the other one that doesn't fade, it scales
+        // cardStyleInterpolator:CardStyleInterpolators.forScaleFromCenterAndroid
+      }}
+      >
         <Stack.Screen
           name="ExamMenu"
           component={ExamMenuScreen}

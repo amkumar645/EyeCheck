@@ -1,24 +1,22 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import PharmacyMenuScreen from '../Pharmacy Screens/PharmacyMenuScreen';
 import NumbingScreen from '../Pharmacy Screens/NumbingScreen';
 import DilatingScreen from '../Pharmacy Screens/DilatingScreen';
 import SteroidScreen from '../Pharmacy Screens/SteroidScreen';
 import GlaucomaScreen from '../Pharmacy Screens/GlaucomaScreen';
 
-const Stack = createNativeStackNavigator();
-const forFade = ({ current }) => ({
-  cardStyle: {
-    opacity: current.progress,
-  },
-});
+const Stack = createStackNavigator();
 
 const PharmacyScreen = () => {
     return (
       <Stack.Navigator 
-      screenOptions={{
-      headerShown: false, 
-      cardStyleInterpolator: forFade
-      }}>
+        screenOptions={{
+        headerShown: false,
+        cardStyleInterpolator:CardStyleInterpolators.forFadeFromCenter
+        // This is the other one that doesn't fade, it scales
+        // cardStyleInterpolator:CardStyleInterpolators.forScaleFromCenterAndroid
+      }}
+      >
         <Stack.Screen
           name="PharmacyMenu"
           component={PharmacyMenuScreen}
