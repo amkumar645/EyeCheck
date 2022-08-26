@@ -1,8 +1,19 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
+import { Camera, CameraType, FlashMode } from 'expo-camera';
+import { useState } from 'react';
 
 const TestPupils = ({ navigation }) => {
+    const [type, setType] = useState(CameraType.back);
+    const [permission, requestPermission] = Camera.useCameraPermissions();
+    const [on, setOn] = useState(false);
+
+    const setOnTorch = () => {
+      if (!permission.granted) requestPermission;
+      setOn(!on);
+    }
+
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
@@ -41,11 +52,12 @@ const TestPupils = ({ navigation }) => {
             Please look at my nose.
           </Text>
         </View>
-        <View style={styles.sectionBox}>
+        <TouchableOpacity style={styles.sectionBox} onPress={setOnTorch}>
           <Text style={styles.section}>
             tap to turn on/turn off your phone flashlight
           </Text>
-        </View>
+        </TouchableOpacity>
+        {on && <Camera style={styles.camera} type={type} flashMode={FlashMode.torch}></Camera>}
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             Dim the room lights

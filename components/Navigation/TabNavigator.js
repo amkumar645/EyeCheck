@@ -17,6 +17,7 @@ const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        unmountOnBlur: true,
         tabBarStyle: {
           position: 'absolute',
           paddingBottom: Platform.OS === "android" ? 20: 30,
