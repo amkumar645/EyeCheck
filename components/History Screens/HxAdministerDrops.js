@@ -1,94 +1,103 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
-import { Camera, CameraType, FlashMode } from 'expo-camera';
-import { useState } from 'react';
+import Proparacaine from '../../assets/images/dropper_1.png';
+import Tropicamide from '../../assets/images/dropper_2.png';
 
-const TestPupils = ({ navigation }) => {
-    const [type, setType] = useState(CameraType.back);
-    const [permission, requestPermission] = Camera.useCameraPermissions();
-    const [on, setOn] = useState(false);
-
-    const setOnTorch = async () => {
-      const {status} = await Camera.requestCameraPermissionsAsync()
-      if (status === 'granted') {
-        setOn(!on)
-      } else {
-        Alert.alert('Access denied')
-      }
-    }
-
+const HxAdministerDrops = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TestMovements')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('PMH')}>
             <View style={styles.linkLeft}>
               <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
-              <Text style={styles.textLeft}>Test Movements</Text>
+              <Text style={styles.textLeft}>Past Medical History</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('TestVA')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('HOME')}>
             <View style={styles.linkRight}>
-              <Text style={styles.textRight}>Test Visual Acuity</Text>
+              <Text style={styles.textRight}>Home</Text>
               <Ionicons style={styles.iconRight} name="chevron-forward" size={30} color={colors.darkblue}/>
             </View>
           </TouchableOpacity>
         </View>
         <View>
           <Text style={styles.subtitle}>
-            Test Pupils
+            Administer Eye Drops
           </Text>
         </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Tell the patient you'll be shining light in
-            their eyes and ask them to look at your nose
+            numbing
           </Text>
-        </View>
-        <View style={styles.textSectionBox}>
+          <Image source={Proparacaine} style={styles.image}/>
           <Text style={styles.textSection}>
-            Voy a brillar una luz en sus ojos. {"\n"}
-            Mire a mi nariz por favor
+            Proparacaine
           </Text>
           <Text style={styles.subTextSection}>
-            I'm going to be shining light into your eyes.
-            Please look at my nose.
+            Use these to numb eyes before administering
+            dilating drops. Can also be used in fluoroscein
+            tests.
           </Text>
         </View>
-        <TouchableOpacity style={styles.sectionBox} onPress={setOnTorch}>
-          <Text style={styles.section}>
-            tap to turn {on ? 'off' : 'on'} your phone flashlight
-          </Text>
-        </TouchableOpacity>
-        {on && <Camera style={styles.camera} type={type} flashMode={FlashMode.torch}></Camera>}
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Dim the room lights
+            Uncap your drops and sanitize your hands
           </Text>
           <Text style={styles.subTextSection}>
-            if you can only turn the lights off, try
-            propping the hallway door open to get
-            enough light to see what you're doing
+            before touching the patient
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Shine the light in each eye one at a time,
-            checking to see if the pupil in that
-            eye contracts
+            Tell the patient you'll be putting
+            drops in their eyes
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            Shine the light in each eye one at a time
-            again, checking to see if the pupil on the opposite
-            side contracts
+            Voy a poner gotas en sus ojos
           </Text>
           <Text style={styles.subTextSection}>
-            for example, if you're shining the light in
-            the right eye, check if the left pupil contracts
-            - it should!
+            I'm going to be putting drops in your eyes
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Gently pull the lower eyelid out
+          </Text>
+          <Text style={styles.subTextSection}>
+            creating a pocket between the eyeball and
+            lower eyelid
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Put 1 drop in between the eyeball and
+            lower eyelid
+          </Text>
+          <Text style={styles.subTextSection}>
+            without touching the patient
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            dilating
+          </Text>
+          <Image source={Tropicamide} style={styles.image}/>
+          <Text style={styles.textSection}>
+            Tropicamide
+          </Text>
+          <Text style={styles.subTextSection}>
+            These take 30 minutes to work
+            - plan accordingly.
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            Repeat the above steps for
+            the Tropicamide drops
           </Text>
         </View>
         </ScrollView>
@@ -140,9 +149,9 @@ const styles = StyleSheet.create({
       width: '15%'
     },
     image: {
-        height: 200,
-        width: 200,
-        marginBottom: 24
+        height: 186,
+        width: 75,
+        marginBottom: 12
     },
     links: {
       flexDirection: 'row',
@@ -202,8 +211,8 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginTop: 30,
         marginBottom: 10,
+        marginTop: 30,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'
@@ -253,4 +262,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TestPupils;
+export default HxAdministerDrops;

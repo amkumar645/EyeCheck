@@ -76,12 +76,6 @@ const PharmacyMenuScreen = ({ navigation }) => {
             </View>
 
           </View>
-          <TouchableOpacity style={styles.sectionBoxBottom} onPress={() => navigation.navigate('HISTORY', { screen: 'PMH' })}>
-            <Text style={styles.sectionBottom}>
-              Came here from Past Medical History?
-              Tap to go back
-            </Text>
-          </TouchableOpacity>
           </ScrollView>
         </SafeAreaView>
       );

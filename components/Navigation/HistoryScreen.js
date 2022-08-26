@@ -4,12 +4,13 @@ import CCScreen from "../History Screens/CCScreen";
 import HPIScreen from "../History Screens/HPIScreen";
 import PMHScreen from "../History Screens/PMHScreen";
 import FHScreen from "../History Screens/FHScreen";
+import HxAdministerDrops from "../History Screens/HxAdministerDrops";
 
 const Stack = createStackNavigator();
 
 const HistoryScreen = () => {
     return (
-      <Stack.Navigator 
+      <Stack.Navigator
         screenOptions={{
         headerShown: false,
         cardStyleInterpolator:CardStyleInterpolators.forFadeFromCenter
@@ -40,6 +41,11 @@ const HistoryScreen = () => {
         <Stack.Screen
           name="FH"
           component={FHScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HxAdministerDrops"
+          component={HxAdministerDrops}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
