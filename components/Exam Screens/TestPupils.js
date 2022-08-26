@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image, Alert} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Camera, CameraType, FlashMode } from 'expo-camera';
@@ -9,9 +9,17 @@ const TestPupils = ({ navigation }) => {
     const [permission, requestPermission] = Camera.useCameraPermissions();
     const [on, setOn] = useState(false);
 
-    const setOnTorch = () => {
-      if (!permission.granted) requestPermission;
-      setOn(!on);
+    const setOnTorch = async () => {
+      // if (!permission.granted) requestPermission;
+      // setOn(!on);
+
+      const {status} = await Camera.requestCameraPermissionsAsync()
+      if (status === 'granted') {
+        // start the camera
+        setOn(!on)
+      } else {
+        Alert.alert('Access denied')
+      }
     }
 
     return (
