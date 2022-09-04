@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "EyeCheck",
+    "name": "Eye-Check",
     "slug": "EyeCheck",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,13 +18,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.skumar12.EyeCheck"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#f5f5f5"
-      }
+      },
+      "package": "com.skumar12.EyeCheck"
     },
     "web": {
       "favicon": "./assets/favicon.png"
