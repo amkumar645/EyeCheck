@@ -1,0 +1,13 @@
+{
+  "cli": {
+    "version": ">= 0.34.0"
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "soryankumar@yahoo.com",
+        "appleTeamId": "V8C4QDND38"
+      }
+    }
+  }
+}
