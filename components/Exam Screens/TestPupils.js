@@ -46,7 +46,7 @@ const TestPupils = ({ navigation }) => {
             their eyes and ask them to look at your nose
           </Text>
         </View>
-        <View style={styles.textSectionBox}>
+        <View style={styles.textSectionBox1}>
           <Text style={styles.textSection}>
             Voy a brillar una luz en sus ojos. {"\n"}
             Mire a mi nariz por favor
@@ -56,12 +56,16 @@ const TestPupils = ({ navigation }) => {
             Please look at my nose.
           </Text>
         </View>
+        {on && <Camera style={styles.camera} type={type} flashMode={FlashMode.torch}>
+        {Platform.OS === "android" &&
+        <Text>{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}
+        {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>}
+        </Camera>}
         <TouchableOpacity style={styles.sectionBox} onPress={setOnTorch}>
           <Text style={styles.section}>
             tap to turn {on ? 'off' : 'on'} your phone flashlight
           </Text>
         </TouchableOpacity>
-        {on && <Camera style={styles.camera} type={type} flashMode={FlashMode.torch}></Camera>}
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             Dim the room lights
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 10,
         marginRight: 10,
-        marginBottom: 120
+        marginBottom: Platform.OS === "android" ? 100: 120
     },
     description: {
       fontSize: Platform.OS === "android" ? 17: 17,
@@ -189,6 +193,7 @@ const styles = StyleSheet.create({
         width: 323,
         minHeight: 84,
         justifyContent: 'center',
+        marginTop: 10,
         marginBottom: 20,
     },
     subTextSection: {
@@ -227,6 +232,17 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
+        alignItems: 'center'
+    },
+    textSectionBox1: {
+        borderWidth: 1,
+        borderColor: "gray",
+        backgroundColor: 'white',
+        borderRadius: 5,
+        width: 323,
+        minHeight: 84,
+        justifyContent: 'center',
+        marginBottom: 10,
         alignItems: 'center'
     },
     textLeft: {
