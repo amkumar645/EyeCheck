@@ -3,6 +3,7 @@ import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import React, { useState } from "react";
 import { NavigationContainer } from '@react-navigation/native';
+import { Text } from 'react-native';
 import BottomTabNavigator from "./components/Navigation/TabNavigator";
 
 const getFonts = async () =>
@@ -15,6 +16,9 @@ const getFonts = async () =>
 
 export default function App() {
   const [fontsloaded, setFontsLoaded] = useState(false);
+
+  Text.defaultProps = Text.defaultProps || {};
+  Text.defaultProps.allowFontScaling = false;
 
   if (fontsloaded) {
     return (
