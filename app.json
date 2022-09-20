@@ -28,6 +28,7 @@
       },
       "package": "com.skumar12.EyeCheck"
     },
+    "versionCode": 2,
     "web": {
       "favicon": "./assets/favicon.png"
     },
