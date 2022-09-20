@@ -23,6 +23,10 @@ const AboutScreen = ({ navigation }) => {
             Clinical Advisory {"\n"}
             from Jamie Schaefer, MD
           </Text>
+          <Text style={styles.subtitle}>
+            Funded by {"\n"}
+            the Brown Medical Alumni Association
+          </Text>
         </View>
         <View>
           <Text style={styles.description}>
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     description: {
-      fontSize: Platform.OS === "android" ? 18: 18,
+      fontSize: 16,
       fontFamily: 'OpenSans',
       marginBottom: 10,
       color: colors.darkerblue,
