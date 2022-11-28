@@ -1,6 +1,6 @@
 import logo from '../../assets/logo.png';
 import { Entypo, FontAwesome5 } from '@expo/vector-icons';
-import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView,ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 
 const HomeScreen = ({ navigation }) => {
@@ -9,6 +9,7 @@ const HomeScreen = ({ navigation }) => {
         <View>
           <Text style={styles.title}>EyeCheck</Text>
         </View>
+        <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <Image
           style={styles.logo}
           source={logo}
@@ -41,11 +42,20 @@ const HomeScreen = ({ navigation }) => {
             Glossary
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBox} onPress={() => navigation.navigate('QUICK', { screen: 'QuickMenu' })}>
+          <Text style={styles.section}>
+            <Text>{" "}</Text>
+            <FontAwesome5 style={styles.icon} name={'exclamation'}/>
+            <Text>{" "}</Text>
+            Quick Start
+          </Text>
+        </TouchableOpacity>
         <View>
           <TouchableOpacity onPress={() => navigation.navigate('ABOUT')}>
             <Text style={styles.footer}>ABOUT</Text>
           </TouchableOpacity>
         </View>
+      </ScrollView>
       </SafeAreaView>
     );
 }
@@ -93,6 +103,13 @@ const styles = StyleSheet.create({
       marginBottom: 30,
       color: colors.darkerblue,
       fontFamily: 'Copperplate',
+    },
+    subtitle: {
+      fontSize: Platform.OS === "android" ? 30: 40,
+      marginTop: 15,
+      marginBottom: 30,
+      color: colors.darkerblue,
+      fontFamily: 'Copperplate'
     },
 });
 

@@ -1,12 +1,28 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView,ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 
 const AboutScreen = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
+      <View style={styles.links}>
+        <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('HOME')}>
+          <View style={styles.linkLeft}>
+            <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
+            <Text style={styles.textLeft}>Home</Text>
+          </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('HOME')}>
+            <View style={styles.linkRight}>
+              <Text style={styles.textRight}></Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      <View>
+      <Text style={styles.title}>ABOUT</Text>
+      </View>
+      <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View>
-          <Text style={styles.title}>ABOUT</Text>
           <Text style={styles.subtitle}>
             Originated by Soryan Kumar,{"\n"}
             Alpert Medical School Class of 2025
@@ -30,34 +46,39 @@ const AboutScreen = ({ navigation }) => {
         </View>
         <View>
           <Text style={styles.description}>
-            EyeCheck was originally designed to assist
-            new Ophthalmology Clinic volunteers at
-            Clínica Esperanza/Hope Clinic in Providence,
-            Rhode Island
+          EyeCheck was created to assist
+          medical student volunteers
+          at the Ophthalmology Service
+          of Clínica Esperanza
+          in Providence, Rhode Island.
           </Text>
           <Text style={styles.description}>
-            It is intended to guide health sciences
-            students and trainees through basic
-            ophthalmological intake procedures and provide
-            Spanish translation assistance.
+          It is intended to guide health sciences
+          students and trainees through basic
+          ophthalmological intake procedures and
+          provide Spanish translation assistance.
           </Text>
           <Text style={styles.description}>
-            It is not intended to take the place of
-            a certified Spanish translator and is only
-            attended for use under the supervision of
-            a board-certified ophthalmologist. It is
-            not intended for patient use nor to diagnose,
-            treat, or cure any disease.
+          It is not intended to take the place
+          of a certified Spanish translator and
+          is only attended for use under the
+          supervision of a board-certified
+          ophthalmologist. It is not intended
+          for patient use, nor to diagnose, treat, or
+          cure any disease.
+          </Text>
+          <Text style={styles.description}>
+          The eye diagram in the
+          Ophthalmology Glossary is available for use
+          under Creative Commons license. The
+          definitions in the Ophthalmology Glossary
+          are adapted from
+          Introducing Ophthalmology:
+          a primer for office staff from the
+          American Academy of Ophthalmology.
           </Text>
         </View>
-        <View>
-          <TouchableOpacity onPress={() => navigation.navigate('HOME')}>
-            <Text style={styles.footer}>
-                <Ionicons name="chevron-back" size={18} color={colors.darkblue}/>
-                Home
-            </Text>
-          </TouchableOpacity>
-        </View>
+        </ScrollView>
       </SafeAreaView>
     );
 }
@@ -87,6 +108,23 @@ const styles = StyleSheet.create({
     icon: {
         fontSize: Platform.OS === "android" ? 30: 40,
     },
+    iconLeft: {
+      width: '15%'
+    },
+    linkBox: {
+      width: '50%',
+    },
+    links: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'flex-start',
+      marginTop: Platform.OS === "android" ? 40: 20,
+    },
+    linkLeft: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+    },
     logo: {
         height: 172,
         width: 154,
@@ -107,9 +145,16 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 20,
     },
+    textLeft: {
+      fontSize: Platform.OS === "android" ? 16: 18,
+      color: colors.darkblue,
+      fontFamily: 'Copperplate',
+      textAlign: 'left',
+      width: '85%'
+    },
     title: {
         fontSize: Platform.OS === "android" ? 60: 70,
-        marginBottom: 30,
+        marginBottom: 20,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'

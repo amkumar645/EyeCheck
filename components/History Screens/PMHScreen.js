@@ -95,7 +95,7 @@ const PMHScreen = ({ navigation }) => {
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             <Text>{" "}</Text>
-            {spanFlag ? 'Are you allergic to any medication?' : '¿Está tomando algún medicamento?'}
+            {spanFlag ? 'Are you allergic to any medication?' : '¿Tiene alguna alergia al medicamento?'}
           </Text>
           <Text style={styles.subTextSection}>
             <Text>{" "}</Text>

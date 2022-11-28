@@ -10,6 +10,7 @@ import AboutScreen from "../About/AboutScreen";
 import ExamScreen from "./ExamScreen";
 import GlossaryScreen from "./GlossaryScreen";
 import PharmacyScreen from "./PharmacyScreen";
+import QuickScreen from "./QuickScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +27,7 @@ const BottomTabNavigator = () => {
           borderTopWidth: 1,
           height: Platform.OS === "android" ? 80: 100,
         },
-        tabBarButton: ['ABOUT'].includes(route.name)
+        tabBarButton: ['ABOUT','QUICK'].includes(route.name)
         ? () => {
             return null;
           }
@@ -141,6 +142,18 @@ const BottomTabNavigator = () => {
             }
           }
       }} />
+      <Tab.Screen name="QUICK" component={QuickScreen}
+        options={{
+            headerShown: false,
+            tabBarStyle: { display: "none" },
+            tabBarIcon: () => {
+              return <></>
+            },
+            tabBarLabel: () => {
+              return <></>
+            },
+        }}
+      />
     </Tab.Navigator>
   );
 };

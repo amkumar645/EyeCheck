@@ -21,41 +21,33 @@ const GlaucomaScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
+        <Text style={styles.title}>PHARMACY</Text>
           <Text style={styles.subtitle}>
             Glaucoma Drops
-          {"\n"}
-            Timolol
           </Text>
         </View>
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <Image source={Timolol} style={styles.image}></Image>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            best practices
+            when you’ll see them
           </Text>
           <Text style={styles.textSection2}>
-            1) tell the patient you'll be putting in eye drops
-            {"\n"}
-            2) hand the patient a tissue to dry their eyes
+            patients may be taking these drops to manage their glaucoma
+            and you may help prescribe these
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            warning
+            similar drops
           </Text>
           <Text style={styles.textSection2}>
-            these drops may sting
-            patients with dry or sensitive eyes
-            {"\n"}
-            (but they're safe to use!)
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            see the Exam section
-          </Text>
-          <Text style={styles.textSection2}>
-            for instructions on administering drops
+          there are many kinds of glaucoma drops with different colored caps: {'\n'}
+           {'    '} Brimonidine — purple {'\n'}
+           {'    '} Latanoprost — teal {'\n'}
+           {'    '} Combigan — dark purple {'\n'}
+           {'    '} Dorzolamide — orange {'\n'}
+           {'    '} Cosopt — navy blue 
           </Text>
         </View>
         </ScrollView>
@@ -154,7 +146,7 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
         marginBottom: 5,
-        marginTop:20,
+        marginTop:5,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'
@@ -224,7 +216,7 @@ const styles = StyleSheet.create({
       width: '85%'
     },
     title: {
-        fontSize: Platform.OS === "android" ? 60: 70,
+        fontSize: Platform.OS === "android" ? 40: 50,
         marginTop: Platform.OS === "android" ? 20: 20,
         marginBottom: 5,
         color: colors.darkerblue,

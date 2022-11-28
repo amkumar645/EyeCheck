@@ -1,70 +1,30 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
-import Proparacaine from '../../assets/images/numb_drops-modified.png';
+import SnellenAlphabeticalImg from '../../assets/images/snellen_alphabetical_new.png';
 
-const NumbingScreen = ({ navigation }) => {
+const SnellenAlphabetical = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.links}>
-          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('PharmacyMenu')}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('QuickMenu')}>
             <View style={styles.linkLeft}>
               <Ionicons style={styles.iconLeft} name="chevron-back" size={30} color={colors.darkblue}/>
-              <Text style={styles.textLeft}>Pharmacy Main</Text>
+              <Text style={styles.textLeft}>Quick Start</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.linkBox}>
+          <TouchableOpacity style={styles.linkBox} onPress={() => navigation.navigate('QuickMenu')}>
             <View style={styles.linkRight}>
               <Text style={styles.textRight}></Text>
             </View>
           </TouchableOpacity>
         </View>
+        <Image source={SnellenAlphabeticalImg} style={styles.image} />
         <View>
-        <Text style={styles.title}>PHARMACY</Text>
-          <Text style={styles.subtitle}>
-            Numbing Drops
-          </Text>
-        </View>
-        <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        <Image source={Proparacaine} style={styles.image}></Image>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            use
-          </Text>
-          <Text style={styles.textSection2}>
-            before dilating drops and in most procedures
-            where you need to touch the patient's eye
-          </Text>
-          <Text style={styles.textSection3}>
-            examples: tonometry applanation to check intraocular
-            pressure & fluorescein staining to check dry eye
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            warning
-          </Text>
-          <Text style={styles.textSection2}>
-            these drops may sting
-            patients with dry or sensitive eyes
-            {"\n"}
-            (but they're safe to use!)
-            {"\n"}
-            {"\n"}
-            do not give these drops to patients to take home
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            similar drops
-          </Text>
-          <Text style={styles.textSection2}>
-            Tetracaine is another kind of dilating drop
-            {"\n"}
-            (it also has a white cap!)
-          </Text>
-        </View>
-        </ScrollView>
+         <Text style={styles.description}>
+           Make sure to hold the device 14 inches (35 cm) away
+         </Text>
+       </View>
       </SafeAreaView>
     );
 }
@@ -74,7 +34,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.bgwhite,
         alignItems: 'center',
-        // justifyContent: 'center',
         marginLeft: 10,
         marginRight: 10,
         marginBottom: 120
@@ -82,11 +41,22 @@ const styles = StyleSheet.create({
     description: {
       fontSize: Platform.OS === "android" ? 17: 17,
       fontFamily: 'OpenSansBold',
-      marginBottom: 30,
+      marginTop: 20,
+      marginBottom: 10,
       color: 'black',
       textAlign: 'center',
       marginRight: 30,
       marginLeft: 30
+    },
+    examSection: {
+        fontSize: 17,
+        color: colors.darkblue,
+        fontFamily: 'OpenSansBold',
+        textAlign: 'center',
+        marginLeft: 2,
+        marginRight: 2,
+        marginTop: 12,
+        marginBottom: 12
     },
     footer: {
         fontSize: Platform.OS === "android" ? 20: 25,
@@ -104,8 +74,8 @@ const styles = StyleSheet.create({
       width: '15%'
     },
     image: {
-        height: 350,
-        width: 115,
+        height: 606,
+        width: 375,
     },
     links: {
       flexDirection: 'row',
@@ -132,17 +102,17 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     scrollView: {
+        flex: 1,
         backgroundColor: colors.bgwhite,
         marginLeft: 10,
         marginRight: 10,
     },
     section: {
-        fontSize: 20,
+        fontSize: 18,
         color: colors.darkblue,
         fontFamily: 'OpenSansBold',
         textAlign: 'center',
-        marginLeft: 2,
-        marginRight: 2
+        marginHorizontal: 10,
     },
     sectionBox: {
         borderWidth: 1,
@@ -153,41 +123,32 @@ const styles = StyleSheet.create({
         minHeight: 84,
         justifyContent: 'center',
         marginBottom: 20,
-
+    },
+    subTextSection: {
+        fontSize: 18,
+        color: colors.grey,
+        fontFamily: 'OpenSans',
+        textAlign: 'center',
+        marginLeft: 4,
+        marginRight: 4,
+        marginBottom: 12
     },
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
-        marginBottom: 5,
-        marginTop:5,
+        marginBottom: 30,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'
     },
     textSection: {
-        fontSize: 17,
+        fontSize: 18,
         color: colors.darkerblue,
         fontFamily: 'OpenSansBold',
-        textAlign: 'left',
-        marginLeft: 10,
-        marginTop: 5
-    },
-    textSection2: {
-        fontSize: 17,
-        color: colors.grey,
-        fontFamily: 'OpenSans',
-        textAlign: 'left',
-        marginLeft: 10,
-        marginBottom: 10,
-        marginRight: 50
-    },
-    textSection3: {
-        fontSize: 14,
-        color: colors.grey,
-        fontFamily: 'OpenSans',
-        textAlign: 'left',
-        marginLeft: 10,
-        marginBottom: 10,
-        marginRight: 50,
+        textAlign: 'center',
+        marginLeft: 4,
+        marginRight: 4,
+        marginTop: 12,
+        marginBottom: 12
     },
     textSectionBox: {
         borderWidth: 1,
@@ -196,7 +157,9 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: 323,
         minHeight: 84,
+        justifyContent: 'center',
         marginBottom: 20,
+        alignItems: 'center'
     },
     textLeft: {
       fontSize: Platform.OS === "android" ? 16: 18,
@@ -213,13 +176,13 @@ const styles = StyleSheet.create({
       width: '85%'
     },
     title: {
-        fontSize: Platform.OS === "android" ? 40: 50,
-        marginTop: Platform.OS === "android" ? 20: 20,
-        marginBottom: 5,
+        fontSize: Platform.OS === "android" ? 60: 70,
+        marginTop: Platform.OS === "android" ? 30: 30,
+        marginBottom: 20,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'
     },
 });
 
-export default NumbingScreen;
+export default SnellenAlphabetical;

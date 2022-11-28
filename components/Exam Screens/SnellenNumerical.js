@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
-import SnellenNumericalImg from '../../assets/images/snellen_numerical.png';
+import SnellenNumericalImg from '../../assets/images/snellen_numerical_new.png';
 
 const SnellenNumerical = ({ navigation }) => {
     return (

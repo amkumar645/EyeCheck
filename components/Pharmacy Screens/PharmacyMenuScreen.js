@@ -28,7 +28,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
                   source={Proparacaine}
                 />
                 <Text style={styles.sectionSubtitle}>
-                  Proparacaine
+                  Proparacaine & others
                 </Text>
               </TouchableOpacity>
             </View>
@@ -42,7 +42,7 @@ const PharmacyMenuScreen = ({ navigation }) => {
                   source={Tropicamide}
                 />
                 <Text style={styles.sectionSubtitle}>
-                  Tropicamide
+                  Tropicamide & others
                 </Text>
               </TouchableOpacity>
             </View>
@@ -70,12 +70,23 @@ const PharmacyMenuScreen = ({ navigation }) => {
                   source={Timolol}
                 />
                 <Text style={styles.sectionSubtitle}>
-                  Timolol
+                  Timolol & others
                 </Text>
               </TouchableOpacity>
             </View>
-
-          </View>
+            </View>
+            <View style={styles.container}>
+            <View style={styles.textSectionBox}>
+            <Text style={styles.textSection}>
+              best practices
+            </Text>
+            <Text style={styles.textSection2}>
+            1) tell the patient you’ll be putting in eye drops {'\n'} {'\n'}
+            2) hand the patient a tissue to dry their eyes {'\n'} {'\n'}
+            3) if you’re putting in more drops after (like dilating drops) wait 60 seconds to allow the first drops to work
+            </Text>
+            </View>
+            </View>
           </ScrollView>
         </SafeAreaView>
       );
@@ -181,6 +192,70 @@ const PharmacyMenuScreen = ({ navigation }) => {
         textAlign: 'center',
         marginLeft: 2,
         marginRight: 2
+      },
+      text: {
+        fontFamily: 'OpenSans',
+        fontSize: Platform.OS === "android" ? 18: 18,
+      },
+      textBold: {
+        fontFamily: 'OpenSansBold',
+        fontSize: Platform.OS === "android" ? 18: 18,
+      },
+      textSection: {
+          fontSize: 17,
+          color: colors.darkerblue,
+          fontFamily: 'OpenSansBold',
+          textAlign: 'left',
+          marginLeft: 10,
+          marginTop: 5
+      },
+      textSection2: {
+          fontSize: 17,
+          color: colors.grey,
+          fontFamily: 'OpenSans',
+          textAlign: 'left',
+          marginLeft: 10,
+          marginBottom: 10,
+          marginRight: 50
+      },
+      textSection3: {
+          fontSize: 14,
+          color: colors.grey,
+          fontFamily: 'OpenSans',
+          textAlign: 'left',
+          marginLeft: 10,
+          marginBottom: 10,
+          marginRight: 50,
+      },
+      textSectionBox: {
+          borderWidth: 1,
+          borderColor: "gray",
+          backgroundColor: 'white',
+          borderRadius: 5,
+          width: 323,
+          minHeight: 84,
+          marginBottom: 20,
+      },
+      textView: {
+        flexDirection: 'row',
+        marginBottom: 30,
+      },
+      textView2: {
+        flexDirection: 'row',
+      },
+      textLeft: {
+        fontSize: Platform.OS === "android" ? 16: 18,
+        color: colors.darkblue,
+        fontFamily: 'Copperplate',
+        textAlign: 'left',
+        width: '85%'
+      },
+      textRight: {
+        fontSize: Platform.OS === "android" ? 16: 18,
+        color: colors.darkblue,
+        fontFamily: 'Copperplate',
+        textAlign: 'right',
+        width: '85%'
       },
       title: {
           fontSize: Platform.OS === "android" ? 50: 60,

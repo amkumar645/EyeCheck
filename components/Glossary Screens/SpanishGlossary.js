@@ -26,18 +26,18 @@ const SpanishGlossary = ({ navigation }) => {
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            eyelids
+            amblyopia
           </Text>
           <Text style={styles.textSection2}>
-            los párpados
+            la ambliopia
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            glasses
+            blindness
           </Text>
           <Text style={styles.textSection2}>
-            las gafas/las lentes
+            la ceguera
           </Text>
         </View>
         <View style={styles.textSectionBox}>
@@ -50,10 +50,26 @@ const SpanishGlossary = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            glaucoma
+            crossed eyes
           </Text>
           <Text style={styles.textSection2}>
-            el glaucoma
+            ojos cruzados
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            eye cancer
+          </Text>
+          <Text style={styles.textSection2}>
+            el cancer de los ojos
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            eye drops
+          </Text>
+          <Text style={styles.textSection2}>
+            las gotas de los ojos
           </Text>
         </View>
         <View style={styles.textSectionBox}>
@@ -74,10 +90,26 @@ const SpanishGlossary = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            retina
+            eyelids
           </Text>
           <Text style={styles.textSection2}>
-            la retina
+            los párpados
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            glasses
+          </Text>
+          <Text style={styles.textSection2}>
+            las gafas/las lentes
+          </Text>
+        </View>
+        <View style={styles.textSectionBox}>
+          <Text style={styles.textSection}>
+            glaucoma
+          </Text>
+          <Text style={styles.textSection2}>
+            el glaucoma
           </Text>
         </View>
         <View style={styles.textSectionBox}>
@@ -90,10 +122,10 @@ const SpanishGlossary = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            retinal detachment
+            ointment
           </Text>
           <Text style={styles.textSection2}>
-            el desprendimiento de la retina
+            el ungüento
           </Text>
         </View>
         <View style={styles.textSectionBox}>
@@ -106,50 +138,18 @@ const SpanishGlossary = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            amblyopia
+            retina
           </Text>
           <Text style={styles.textSection2}>
-            la ambliopia
+            la retina
           </Text>
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            unusual eye movements
+            retinal detachment
           </Text>
           <Text style={styles.textSection2}>
-            movimientos extraños de los ojos
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            eye drops
-          </Text>
-          <Text style={styles.textSection2}>
-            las gotas de los ojos
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            ointment
-          </Text>
-          <Text style={styles.textSection2}>
-            el ungüento
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            ointment
-          </Text>
-          <Text style={styles.textSection2}>
-            el ungüento
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            blindness
-          </Text>
-          <Text style={styles.textSection2}>
-            la ceguera
+            el desprendimiento de la retina
           </Text>
         </View>
         <View style={styles.textSectionBox}>
@@ -162,18 +162,10 @@ const SpanishGlossary = ({ navigation }) => {
         </View>
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
-            crossed eyes
+            unusual eye movements
           </Text>
           <Text style={styles.textSection2}>
-            ojos cruzados
-          </Text>
-        </View>
-        <View style={styles.textSectionBox}>
-          <Text style={styles.textSection}>
-            eye cancer
-          </Text>
-          <Text style={styles.textSection2}>
-            el cancer de los ojos
+            movimientos extraños de los ojos
           </Text>
         </View>
         </ScrollView>

@@ -21,10 +21,9 @@ const DilatingScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View>
+        <Text style={styles.title}>PHARMACY</Text>
           <Text style={styles.subtitle}>
             Dilating Drops
-            {"\n"}
-            Tropicamide
           </Text>
         </View>
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
@@ -34,24 +33,16 @@ const DilatingScreen = ({ navigation }) => {
               use
             </Text>
             <Text style={styles.textSection2}>
-              after numbing drops and in most procedures
-              where you need to touch the patient's eye
-            </Text>
-            <Text style={styles.textSection3}>
-              examples: tonometry applanation to check intraocular
-              pressure & fluorescein staining to check dry eye
+            to dilate the pupil in order to examine the back of the eye {"\n"}
+            (indicated when the patient has glaucoma or diabetes)
             </Text>
           </View>
           <View style={styles.textSectionBox}>
             <Text style={styles.textSection}>
-              best practices
+              heads up!
             </Text>
             <Text style={styles.textSection2}>
-              1) tell the patient you'll be putting in eye drops
-              {"\n"}
-              2) hand the patient a tissue to dry their eyes
-              {"\n"}
-              3) wait 30 minutes to allow these drops to work
+              these drops require 30 minute to take effect — plan your time accordingly
             </Text>
           </View>
           <View style={styles.textSectionBox}>
@@ -59,18 +50,16 @@ const DilatingScreen = ({ navigation }) => {
               warning
             </Text>
             <Text style={styles.textSection2}>
-              these drops may sting
-              patients with dry or sensitive eyes
-              {"\n"}
-              (but they're safe to use!)
+              do not give these drops to patients to take home
             </Text>
           </View>
           <View style={styles.textSectionBox}>
             <Text style={styles.textSection}>
-              see the Exam section
+              similar drops
             </Text>
             <Text style={styles.textSection2}>
-              for instructions on administering drops
+            there are other kinds of dilating but all have red caps: {"\n"}
+            Atropine, Phenylephrine, and Cyclopentolate
             </Text>
           </View>
         </ScrollView>
@@ -168,7 +157,7 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: Platform.OS === "android" ? 30: 35,
         marginBottom: 5,
-        marginTop:20,
+        marginTop:5,
         color: colors.darkerblue,
         fontFamily: 'Copperplate',
         textAlign: 'center'
@@ -238,7 +227,7 @@ const styles = StyleSheet.create({
       width: '85%'
     },
     title: {
-        fontSize: Platform.OS === "android" ? 60: 70,
+        fontSize: Platform.OS === "android" ? 40: 50,
         marginTop: Platform.OS === "android" ? 20: 20,
         marginBottom: 5,
         color: colors.darkerblue,

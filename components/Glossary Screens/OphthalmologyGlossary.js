@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
+import Eye_Anat from '../../assets/images/eye_diagram.png';
 
 const OphthalmologyGlossary = ({ navigation }) => {
     return (
@@ -24,6 +25,10 @@ const OphthalmologyGlossary = ({ navigation }) => {
           </Text>
         </View>
         <ScrollView contentContainerStyle={{flexGrow : 1, alignItems : 'center'}} style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <Image
+              style={styles.image}
+              source={Eye_Anat}
+          />
         <View style={styles.textSectionBox}>
           <Text style={styles.textSection}>
             amblyopia
@@ -120,8 +125,10 @@ const styles = StyleSheet.create({
       width: '15%'
     },
     image: {
-        height: 175,
-        width: 115
+        height: 300,
+        width: 340,
+        marginTop: 20,
+        marginBottom: 20
     },
     links: {
       flexDirection: 'row',
