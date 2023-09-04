@@ -36,6 +36,10 @@ const AboutScreen = ({ navigation }) => {
             Alpert Medical School Class of 2025
           </Text>
           <Text style={styles.subtitle}>
+            Research Support by Spandana Jarmale,{"\n"}
+            Alpert Medical School Class of 2024
+          </Text>
+          <Text style={styles.subtitle}>
             Clinical Advisory {"\n"}
             from Jamie Schaefer, MD
           </Text>

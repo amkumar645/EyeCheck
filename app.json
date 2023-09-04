@@ -2,7 +2,7 @@
   "expo": {
     "name": "Eye-Check",
     "slug": "EyeCheck",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -27,7 +27,7 @@
         "backgroundColor": "#f5f5f5"
       },
       "package": "com.skumar12.EyeCheck",
-      "versionCode": 2
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"
