@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
 import { colors } from '../utils/colors';
 
 const GlossaryMenuScreen = ({ navigation }) => {

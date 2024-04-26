@@ -1,6 +1,6 @@
 import logo from '../../assets/logo.png';
 import { Entypo, FontAwesome5 } from '@expo/vector-icons';
-import { StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView,ScrollView} from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView,ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 
 const HomeScreen = ({ navigation }) => {

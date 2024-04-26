@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 import Proparacaine from '../../assets/images/dropper_1.png';

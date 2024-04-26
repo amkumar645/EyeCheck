@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image, ScrollView} from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Image, ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 import Proparacaine from '../../assets/images/numb_drops-modified.png';
 import Tropicamide from '../../assets/images/dilating_drops.png';

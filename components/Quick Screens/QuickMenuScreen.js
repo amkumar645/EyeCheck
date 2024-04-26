@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, ScrollView} from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View, SafeAreaView, ScrollView} from 'react-native';
 import { colors } from '../utils/colors';
 import { Camera, CameraType, FlashMode } from 'expo-camera';
 import { useState } from 'react';
@@ -107,15 +107,15 @@ const QuickMenuScreen = ({ navigation }) => {
           marginTop: 20,
       },
       textLeft: {
-        fontSize: Platform.OS === "android" ? 16: 18,
+        fontSize: Platform.OS === "android" ? 20: 25,
         color: colors.darkblue,
         fontFamily: 'Copperplate',
         textAlign: 'left',
         width: '85%'
       },
       title: {
-          fontSize: Platform.OS === "android" ? 30: 50,
-          marginTop: Platform.OS === "android" ? 40: 20,
+          fontSize: Platform.OS === "android" ? 40: 50,
+          marginTop: Platform.OS === "android" ? 40: 40,
           marginBottom: 20,
           color: colors.darkerblue,
           fontFamily: 'Copperplate',

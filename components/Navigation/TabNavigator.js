@@ -2,7 +2,7 @@
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { colors } from '../utils/colors';
-import { StyleSheet, Text } from 'react-native';
+import { Platform, StyleSheet, Text } from 'react-native';
 import { Entypo, FontAwesome5, Ionicons } from '@expo/vector-icons';
 import HomeScreen from "../Home/HomeScreen";
 import HistoryScreen from "./HistoryScreen";

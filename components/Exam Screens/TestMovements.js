@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View, SafeAreaView,ScrollView, Image} from 'react-native';
 import { colors } from '../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
 import H_Test from '../../assets/images/h_test.png';

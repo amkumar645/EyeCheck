@@ -27,7 +27,7 @@
         "backgroundColor": "#f5f5f5"
       },
       "package": "com.skumar12.EyeCheck",
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,6 +36,9 @@
       "eas": {
         "projectId": "af6b358f-e7db-4565-bfdf-f3eec8bc1e5c"
       }
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
